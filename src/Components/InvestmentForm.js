@@ -21,7 +21,13 @@ const InvestmentForm = ({ addInvestment }) => {
         placeholder="Tipo de inversión"
         required
       />
-
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        placeholder="Monto"
+        required
+      />
       <button type="submit">Añadir Inversión</button>
     </form>
   );
