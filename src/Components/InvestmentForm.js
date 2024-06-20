@@ -12,7 +12,7 @@ const InvestmentForm = ({ addInvestment }) => {
     setAmount("");
   };
 
-  return <></>;
+  return <form onSubmit={handleSubmit}></form>;
 };
 
 export default InvestmentForm;
