@@ -12,7 +12,19 @@ const InvestmentForm = ({ addInvestment }) => {
     setAmount("");
   };
 
-  return <form onSubmit={handleSubmit}></form>;
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={type}
+        onChange={(e) => setType(e.target.value)}
+        placeholder="Tipo de inversión"
+        required
+      />
+
+      <button type="submit">Añadir Inversión</button>
+    </form>
+  );
 };
 
 export default InvestmentForm;
