@@ -4,9 +4,9 @@ const InvestmentList = ({ investments }) => {
   return (
     <>
       <ul>
-        {investmewnts.map((investmeent, index) => (
+        {investments.map((investment, index) => (
           <li key={index}>
-            {investmenet.type}: ${investmenet.amount.toFixed(2)}
+            {investment.type}: ${investment.amount.toFixed(2)}
           </li>
         ))}
       </ul>
