@@ -1,4 +1,3 @@
-// // src/data/sampleData.js
 export const sampleData = [
   { name: "Enero", amount: 1000 },
   { name: "Febrero", amount: 2000 },
