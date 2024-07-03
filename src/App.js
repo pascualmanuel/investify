@@ -1,7 +1,10 @@
 // src/App.js
 import React, { useState } from "react";
+import InvestmentChart from "./components/InvestmentChart";
 import InvestmentForm from "./components/InvestmentForm";
+import InvestmentChart from "./components/InvestmentChart";
 import InvestmentList from "./components/InvestmentList";
+import InvestmentChart from "./components/InvestmentChart";
 import InvestmentChart from "./components/InvestmentChart";
 import { sampleData } from "./data/sampleData";
 import "./styles/App.css";
