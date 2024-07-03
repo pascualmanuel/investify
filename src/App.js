@@ -17,6 +17,9 @@ function App() {
   return (
     <div className="App">
       <h1>Simulador de Inversiones</h1>
+      <InvestmentForm addInvestment={addInvestment} />
+      <InvestmentList investments={investments} />
+      <InvestmentChart data={sampleData} />
     </div>
   );
 }
