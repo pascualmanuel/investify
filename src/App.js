@@ -5,7 +5,7 @@ import InvestmentList from "./Components/InvestmentList";
 import InvestmentChart from "./Components/InvestmentChart";
 
 import { sampleData } from "./Data/sampleData";
-import "./styles/App.css";
+import "./Styles/App.css";
 
 function App() {
   const [investments, setInvestments] = useState([]);
