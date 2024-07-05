@@ -7,8 +7,8 @@ export const sampleData = [
   { name: "Junio", amount: 5850 },
   { name: "Julio", amount: 6000 },
   { name: "Agosto", amount: 5200 },
-  { name: "Septiembre", amount: 5200 },
-  { name: "Octubre", amount: 5200 },
-  { name: "Noviembre", amount: 5200 },
-  { name: "Diciembre", amount: 5200 },
+  { name: "Septiembre", amount: 4200 },
+  { name: "Octubre", amount: 7200 },
+  { name: "Noviembre", amount: 9200 },
+  { name: "Diciembre", amount: 10200 },
 ];
