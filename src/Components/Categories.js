@@ -22,6 +22,28 @@ function Categories() {
             <div className="box-container">
               <div className="box">
                 <img
+                  src={ClasesIcon}
+                  alt="Icono Clases"
+                  width={65}
+                  style={{
+                    marginLeft: "17px",
+                    marginTop: "15px",
+                    marginBottom: "10px",
+                  }}
+                />
+                <h2 style={{ marginLeft: "20px", fontSize: "24px" }}>Clases</h2>
+                <p
+                  style={{
+                    marginLeft: "20px",
+                    marginTop: "8px",
+                    marginRight: "20px",
+                  }}
+                >
+                  Aprende un idioma, música o comienza a entrenar.
+                </p>
+              </div>
+              <div className="box">
+                <img
                   src={ArreglatodoIcon}
                   alt="Icono Arreglatodo"
                   width={65}
