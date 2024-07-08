@@ -22,6 +22,28 @@ function Categories() {
             <div className="box-container">
               <div className="box">
                 <img
+                  src={HogarIcon}
+                  alt="Icono Hogar"
+                  width={65}
+                  style={{
+                    marginLeft: "17px",
+                    marginTop: "15px",
+                    marginBottom: "10px",
+                  }}
+                />
+                <h2 style={{ marginLeft: "20px", fontSize: "24px" }}>Hogar</h2>
+                <p
+                  style={{
+                    marginLeft: "17px",
+                    marginTop: "8px",
+                    marginRight: "20px",
+                  }}
+                >
+                  Electricistas, Plomeros, Gasistas, Cerrajeros y mucho más.
+                </p>
+              </div>
+              <div className="box">
+                <img
                   src={TecnoIcon}
                   alt="Icono Tecnología"
                   width={65}
