@@ -19,7 +19,33 @@ function Categories() {
             </p>
           </div>
           <div className="categories-right-container">
-            <div className="box-container"></div>
+            <div className="box-container">
+              <div className="box">
+                <img
+                  src={ArreglatodoIcon}
+                  alt="Icono Arreglatodo"
+                  width={65}
+                  style={{
+                    marginLeft: "17px",
+                    marginTop: "15px",
+                    marginBottom: "10px",
+                  }}
+                />
+                <h2 style={{ marginLeft: "20px", fontSize: "24px" }}>
+                  Arreglatodo
+                </h2>
+                <p
+                  style={{
+                    marginLeft: "20px",
+                    marginTop: "8px",
+                    marginRight: "20px",
+                  }}
+                >
+                  Elige tu Handyman para esas pequeñas tareas de rápida
+                  solución.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
