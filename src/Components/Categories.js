@@ -18,6 +18,9 @@ function Categories() {
               tecnología.
             </p>
           </div>
+          <div className="categories-right-container">
+            <div className="box-container"></div>
+          </div>
         </div>
       </div>
     </>
