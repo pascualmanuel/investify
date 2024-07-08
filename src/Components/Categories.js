@@ -22,6 +22,30 @@ function Categories() {
             <div className="box-container">
               <div className="box">
                 <img
+                  src={TecnoIcon}
+                  alt="Icono Tecnología"
+                  width={65}
+                  style={{
+                    marginLeft: "17px",
+                    marginTop: "15px",
+                    marginBottom: "10px",
+                  }}
+                />
+                <h2 style={{ marginLeft: "20px", fontSize: "24px" }}>
+                  Tecnología
+                </h2>
+                <p
+                  style={{
+                    marginLeft: "20px",
+                    marginTop: "8px",
+                    marginRight: "20px",
+                  }}
+                >
+                  Repara tu Teléfono móvil, Tablet o Computadora.
+                </p>
+              </div>
+              <div className="box">
+                <img
                   src={ClasesIcon}
                   alt="Icono Clases"
                   width={65}
