@@ -22,7 +22,7 @@ function Categories() {
             <div className="box-container">
               <div className="box">
                 <img
-                  src={HogarIcon}
+                  // src={HogarIcon}
                   alt="Icono Hogar"
                   width={65}
                   style={{
@@ -44,7 +44,7 @@ function Categories() {
               </div>
               <div className="box">
                 <img
-                  src={TecnoIcon}
+                  // src={TecnoIcon}
                   alt="Icono Tecnología"
                   width={65}
                   style={{
@@ -68,7 +68,7 @@ function Categories() {
               </div>
               <div className="box">
                 <img
-                  src={ClasesIcon}
+                  // src={ClasesIcon}
                   alt="Icono Clases"
                   width={65}
                   style={{
@@ -90,7 +90,7 @@ function Categories() {
               </div>
               <div className="box">
                 <img
-                  src={ArreglatodoIcon}
+                  // src={ArreglatodoIcon}
                   alt="Icono Arreglatodo"
                   width={65}
                   style={{
