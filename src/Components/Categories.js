@@ -1,4 +1,8 @@
 import React from "react";
+import HogarIcon from "../Assets/Categories/casita.png";
+import ClasesIcon from "../Assets/Categories/clases.png";
+import ArreglatodoIcon from "../Assets/Categories/pibitos.png";
+import TecnoIcon from "../Assets/Categories/celu.png";
 
 function Categories() {
   return (
