@@ -28,7 +28,35 @@ const ReviewItem = ({ img, name, text }) => (
 );
 
 function Reviews() {
-  return <></>;
+  return (
+    <div
+      style={{
+        backgroundColor: "rgba(247, 248, 248, 1)",
+        paddingBottom: "100px",
+      }}
+    >
+      <div className="reviews-container max-2000">
+        <p>Lo que dicen los Usuarios</p>
+        <h2>
+          Comunidad
+          <span style={{ color: "#5d80ff" }}> Manno. </span>
+        </h2>
+      </div>
+      <AliceCarousel
+        mouseTracking
+        items={items}
+        responsive={responsive}
+        controlsStrategy="alternate"
+        infinite={true}
+        autoPlay={true}
+        autoPlayInterval={2000}
+        disableButtonsControls={true}
+        disableDotsControls={true}
+        autoPlayStrategy="none"
+        paddingLeft={50}
+      />
+    </div>
+  );
 }
 
 export default Reviews;
