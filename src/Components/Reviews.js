@@ -28,7 +28,12 @@ const ReviewItem = ({ img, name, text }) => (
 );
 
 function Reviews() {
-  
+  const responsive = {
+    300: { items: 1 },
+    535: { items: 2 },
+    830: { items: 3 },
+    1060: { items: 4 },
+  };
 
   const items = reviewsData.map((review, index) => (
     <ReviewItem
