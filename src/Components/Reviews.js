@@ -28,6 +28,17 @@ const ReviewItem = ({ img, name, text }) => (
 );
 
 function Reviews() {
+  
+
+  const items = reviewsData.map((review, index) => (
+    <ReviewItem
+      key={index}
+      img={review.img}
+      name={review.name}
+      text={review.text}
+    />
+  ));
+
   return (
     <div
       style={{
