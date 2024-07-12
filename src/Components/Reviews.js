@@ -41,6 +41,25 @@ const reviewsData = [
     name: "Monica",
     text: "Excelente todo , hasta me trajo una aspiradora para tener mientras arreglaba la mia. IMPECABLE!!!",
   },
+
+  { img: Hombre4, name: "Juan", text: "Muy profesional y atento" },
+  { img: Mujer3, name: "Carmen", text: "Buen trabajo, ordenado, recomendable" },
+  { img: Hombre5, name: "Manuel", text: "Totalmente recomendable." },
+  {
+    img: Mujer6,
+    name: "Karina",
+    text: "Excelente trabajo, atención y asesoramiento,",
+  },
+  {
+    img: Mujer7,
+    name: "María Mercedes",
+    text: "Desinstaló un aire acondicionado viejo e instalo uno nuevo. Todo perfecto",
+  },
+  {
+    img: Mujer1,
+    name: "Graciela",
+    text: "Excelente profesional. Puntual y prolijo",
+  },
 ];
 
 const ReviewItem = ({ img, name, text }) => (
