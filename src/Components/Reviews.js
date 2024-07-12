@@ -2,8 +2,31 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import FiveStars from "../Assets/five-stars.svg";
+import Mujer1 from "../Assets/Personitas/Mujer1.png";
+import Mujer2 from "../Assets/Personitas/Mujer2.png";
+import Mujer3 from "../Assets/Personitas/Mujer3.png";
+import Mujer4 from "../Assets/Personitas/Mujer4.png";
+import Mujer5 from "../Assets/Personitas/Mujer5.png";
+import Mujer6 from "../Assets/Personitas/Mujer6.png";
+import Mujer7 from "../Assets/Personitas/Mujer7.png";
+import Hombre1 from "../Assets/Personitas/Hombre1.png";
+import Hombre2 from "../Assets/Personitas/Hombre2.png";
+import Hombre3 from "../Assets/Personitas/Hombre3.png";
+import Hombre4 from "../Assets/Personitas/Hombre4.png";
+import Hombre5 from "../Assets/Personitas/Hombre5.png";
 
-const reviewsData = [];
+const reviewsData = [
+  {
+    img: Hombre3,
+    name: "Matías",
+    text: "Super recomendable, explico el paso a paso de lo que hacia y me dio consejos a tener en cuenta para el mantenimiento de la cocina.",
+  },
+  {
+    img: Mujer2,
+    name: "Paula",
+    text: "Impecable. Vino al toque. Instaló la hamaca. Quedó perfecto. gracias!",
+  },
+];
 
 const ReviewItem = ({ img, name, text }) => (
   <div className="item">
