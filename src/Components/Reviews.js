@@ -26,6 +26,21 @@ const reviewsData = [
     name: "Paula",
     text: "Impecable. Vino al toque. Instaló la hamaca. Quedó perfecto. gracias!",
   },
+  {
+    img: Mujer7,
+    name: "Guadalupe",
+    text: "Super puntual! Prolijo, profesional, süper recomendable. quedó todo perfecto. Muchas gracias",
+  },
+  {
+    img: Hombre2,
+    name: "Fernando",
+    text: "Fue puntual, trabajo my bien, profesional.",
+  },
+  {
+    img: Mujer1,
+    name: "Monica",
+    text: "Excelente todo , hasta me trajo una aspiradora para tener mientras arreglaba la mia. IMPECABLE!!!",
+  },
 ];
 
 const ReviewItem = ({ img, name, text }) => (
