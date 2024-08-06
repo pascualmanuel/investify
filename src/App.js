@@ -9,17 +9,26 @@ import "./Styles/App.css";
 
 function App() {
   const [investments, setInvestments] = useState([]);
+  const [chartData, setChartData] = useState([]);
 
   const addInvestment = (investment) => {
     setInvestments([...investments, investment]);
   };
+
+  useEffect(() => {
+    const data = investments.map((inv, index) => ({
+      name: `Inv ${index + 1}`,
+      amount: inv.amount,
+    }));
+    setChartData(data);
+  }, [investments]);
 
   return (
     <div className="App">
       <h1>Simulador de Inversiones</h1>
       <InvestmentForm addInvestment={addInvestment} />
       <InvestmentList investments={investments} />
-      <InvestmentChart data={sampleData} />
+      <InvestmentChart data={chartData} />
     </div>
   );
 }
