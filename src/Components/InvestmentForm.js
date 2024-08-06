@@ -1,4 +1,3 @@
-// src/components/InvestmentForm.js
 import React, { useState } from "react";
 
 const InvestmentForm = ({ addInvestment }) => {
@@ -7,9 +6,11 @@ const InvestmentForm = ({ addInvestment }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addInvestment({ type, amount: parseFloat(amount) });
-    setType("");
-    setAmount("");
+    if (type && amount > 0) {
+      addInvestment({ type, amount: parseFloat(amount) });
+      setType("");
+      setAmount("");
+    }
   };
 
   return (
