@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import InvestmentForm from "./Components/InvestmentForm";
 import InvestmentList from "./Components/InvestmentList";
 import InvestmentChart from "./Components/InvestmentChart";
-
+import { useEffect } from "react";
 import { sampleData } from "./Data/sampleData";
 import "./Styles/App.css";
 
