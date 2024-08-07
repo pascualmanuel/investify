@@ -1,3 +1,4 @@
+// src/components/InvestmentList.js
 import React from "react";
 
 const InvestmentList = ({ investments }) => {
@@ -5,7 +6,8 @@ const InvestmentList = ({ investments }) => {
     <ul>
       {investments.map((investment, index) => (
         <li key={index}>
-          {investment.type}: ${investment.amount.toFixed(2)}
+          {investment.crypto}: ${investment.amount.toFixed(2)} comprados el{" "}
+          {investment.date} a ${investment.price.toFixed(2)} cada uno
         </li>
       ))}
     </ul>
