@@ -6,6 +6,7 @@ import InvestmentList from "./Components/InvestmentList";
 import InvestmentChart from "./Components/InvestmentChart";
 import "./Styles/App.css";
 import ReactDOM from "react";
+import LimitedCounter from "./Components/LimitedCounter";
 
 function App() {
   const [investments, setInvestments] = useState([]);
@@ -43,6 +44,7 @@ function App() {
       <InvestmentForm addInvestment={addInvestment} />
       <InvestmentList investments={investments} />
       <InvestmentChart data={chartData} />
+      <LimitedCounter />
     </div>
   );
 }
