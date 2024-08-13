@@ -8,6 +8,8 @@ const RandomImageGallery = () => {
       .then((response) => response.json())
       .then((data) => setImages(data));
   }, []);
+
+  return <div style={{ display: "flex", gap: "10px" }}></div>;
 };
 
 export default RandomImageGallery;
