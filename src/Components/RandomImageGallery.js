@@ -4,7 +4,7 @@ const RandomImageGallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://picsum.photos/id/870/200/300?grayscale&blur=2")
+    fetch("https://picsum.photos/v2/list?page=2&limit=12")
       .then((response) => response.json())
       .then((data) => setImages(data));
   }, []);
