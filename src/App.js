@@ -7,6 +7,7 @@ import InvestmentChart from "./Components/InvestmentChart";
 import "./Styles/App.css";
 import ReactDOM from "react";
 import LimitedCounter from "./Components/LimitedCounter";
+import RandomImageGallery from "./Components/RandomImageGallery";
 
 function App() {
   const [investments, setInvestments] = useState([]);
@@ -45,6 +46,7 @@ function App() {
       <InvestmentList investments={investments} />
       <InvestmentChart data={chartData} />
       <LimitedCounter />
+      <RandomImageGallery />
     </div>
   );
 }
