@@ -13,7 +13,9 @@ const CurrencyConverter = () => {
         onChange={(e) => setAmount(e.target.value)}
         placeholder="USD"
       />
-     
+      <p>
+        {amount} USD = {(amount * exchangeRate).toFixed(2)} EUR
+      </p>
     </div>
   );
 };
