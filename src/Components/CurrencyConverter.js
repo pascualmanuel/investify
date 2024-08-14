@@ -7,8 +7,16 @@ const CurrencyConverter = () => {
   return (
     <div>
       <h2>Currency Converter</h2>
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        placeholder="USD"
+      />
+     
     </div>
   );
 };
 
 export default CurrencyConverter;
+
