@@ -10,7 +10,17 @@ const RandomImageGallery = () => {
   }, []);
 
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "10px",
+        width: "750px",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        marginTop: "70px",
+      }}
+    >
       {images.map((image) => (
         <img
           key={image.id}
@@ -25,3 +35,7 @@ const RandomImageGallery = () => {
 };
 
 export default RandomImageGallery;
+
+// flex-direction: row;
+// flex-wrap: wrap;
+// justify-content: center;
