@@ -15,6 +15,18 @@ const TrafficLight = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  return (
+    <div>
+      <div
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: light === "red" ? "red" : "gray",
+        }}
+      ></div>
+    </div>
+  );
 };
 
 export default TrafficLight;
