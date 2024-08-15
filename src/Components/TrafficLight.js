@@ -25,6 +25,20 @@ const TrafficLight = () => {
           backgroundColor: light === "red" ? "red" : "gray",
         }}
       ></div>
+      <div
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: light === "yellow" ? "yellow" : "gray",
+        }}
+      ></div>
+      <div
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: light === "green" ? "green" : "gray",
+        }}
+      ></div>
     </div>
   );
 };
