@@ -9,6 +9,7 @@ import ReactDOM from "react";
 import LimitedCounter from "./Components/LimitedCounter";
 import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
+import TrafficLight from "./Components/TrafficLight";
 
 function App() {
   const [investments, setInvestments] = useState([]);
@@ -49,6 +50,7 @@ function App() {
       <LimitedCounter />
       <RandomImageGallery />
       <CurrencyConverter />
+      <TrafficLight />
     </div>
   );
 }

@@ -22,6 +22,8 @@ const TrafficLight = () => {
         style={{
           width: 50,
           height: 50,
+          borderRadius: "50px",
+          marginTop: "5px",
           backgroundColor: light === "red" ? "red" : "gray",
         }}
       ></div>
@@ -29,6 +31,8 @@ const TrafficLight = () => {
         style={{
           width: 50,
           height: 50,
+          borderRadius: "50px",
+          marginTop: "5px",
           backgroundColor: light === "yellow" ? "yellow" : "gray",
         }}
       ></div>
@@ -36,6 +40,8 @@ const TrafficLight = () => {
         style={{
           width: 50,
           height: 50,
+          borderRadius: "50px",
+          marginTop: "5px",
           backgroundColor: light === "green" ? "green" : "gray",
         }}
       ></div>
