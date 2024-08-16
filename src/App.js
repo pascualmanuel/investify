@@ -10,6 +10,7 @@ import LimitedCounter from "./Components/LimitedCounter";
 import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
 import TrafficLight from "./Components/TrafficLight";
+import RandomQuoteGenerator from "./Components/RandomQuote";
 
 function App() {
   const [investments, setInvestments] = useState([]);
@@ -51,6 +52,7 @@ function App() {
       <RandomImageGallery />
       <CurrencyConverter />
       <TrafficLight />
+      <RandomQuoteGenerator />
     </div>
   );
 }
