@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const RandomQuoteGenerator = () => {
   const quotes = [
     "La vida es lo que pasa mientras haces otros planes.",
     "El que no arriesga no gana.",
     "Lo que no te mata, te hace más fuerte.",
-    "El éxito es la suma de pequeños esfuerzos repetidos día tras día."
+    "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
   ];
 
   const [quote, setQuote] = useState(quotes[0]);
@@ -15,7 +15,11 @@ const RandomQuoteGenerator = () => {
     setQuote(quotes[randomIndex]);
   };
 
-
+  return (
+    <div>
+      <h3>{quote}</h3>
+    </div>
+  );
 };
 
 export default RandomQuoteGenerator;
