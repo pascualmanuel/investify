@@ -18,6 +18,7 @@ const RandomQuoteGenerator = () => {
   return (
     <div>
       <h3>{quote}</h3>
+      <button onClick={generateQuote}>Generar nueva frase</button>
     </div>
   );
 };
