@@ -10,7 +10,11 @@ const DigitalClock = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <></>;
+  return (
+    <div>
+      <h2>{time}</h2>
+    </div>
+  );
 };
 
 export default DigitalClock;
