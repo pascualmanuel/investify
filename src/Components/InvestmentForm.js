@@ -1,6 +1,6 @@
 // src/components/InvestmentForm.js
 import React, { useState } from "react";
-import Many from "../Assets/manyy.JPG";
+
 const InvestmentForm = ({ addInvestment }) => {
   const [crypto, setCrypto] = useState("BTC");
   const [amount, setAmount] = useState("");
@@ -42,7 +42,6 @@ const InvestmentForm = ({ addInvestment }) => {
         required
       />
       <button type="submit">Añadir Inversión</button>
-      <img src={Many} />
     </form>
   );
 };
