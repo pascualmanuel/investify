@@ -1,8 +1,17 @@
 const ShoppingList = () => {
   const [items, setItems] = useState([]);
+  const [newItem, setNewItem] = useState("");
+  const [cost, setCost] = useState("");
 
+  const addItem = () => {
+    if (newItem.trim() && cost.trim()) {
+      setItems([...items, { name: newItem, cost: parseFloat(cost) }]);
+      setNewItem("");
+      setCost("");
+    }
+  };
 
-
+  const totalCost = items.reduce((total, item) => total + item.cost, 0);
 
   return (
     <div>
