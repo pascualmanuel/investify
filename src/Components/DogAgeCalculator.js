@@ -1,7 +1,20 @@
 import React from "react";
-
+import { useState } from "react";
 const DogAgeCalculator = () => {
-  return <></>;
+  const [age, SetAge] = useState(0);
+
+  //   const dogAge = 0;
+
+  return (
+    <>
+      <input
+        type="number"
+        value={age}
+        onChange={(e) => SetAge(e.target.value)}
+        placeholder="Age"
+      />
+    </>
+  );
 };
 
 export default DogAgeCalculator;
