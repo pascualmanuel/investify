@@ -13,6 +13,7 @@ import TrafficLight from "./Components/TrafficLight";
 import RandomQuoteGenerator from "./Components/RandomQuote";
 import DigitalClock from "./Components/DigitalClock";
 import DogAgeCalculator from "./Components/DogAgeCalculator";
+import ShoppingList from "./Components/ShippingList";
 
 function App() {
   const [investments, setInvestments] = useState([]);
@@ -57,6 +58,7 @@ function App() {
       <RandomQuoteGenerator />
       <DigitalClock />
       <DogAgeCalculator />
+      <ShoppingList />
     </div>
   );
 }
