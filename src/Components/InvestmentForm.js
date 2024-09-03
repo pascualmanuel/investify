@@ -5,6 +5,7 @@ const InvestmentForm = ({ addInvestment }) => {
   const [crypto, setCrypto] = useState("BTC");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
+  // console.log(date);
 
   const handleSubmit = (e) => {
     e.preventDefault();

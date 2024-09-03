@@ -7,7 +7,7 @@ const InvestmentList = ({ investments }) => {
       {investments.map((investment, index) => (
         <li key={index}>
           {investment.crypto}: ${investment.amount.toFixed(2)} comprados el{" "}
-          {investment.date} a ${investment.price.toFixed(2)} cada uno hola
+          {investment.date} a ${investment.price.toFixed(2)} cada uno
         </li>
       ))}
     </ul>
