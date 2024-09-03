@@ -10,7 +10,7 @@ const Friends = () => {
     const fetchData = async () => {
       try {
         // Fetch following data
-        const followingResponse = await fetch("/following.json");
+        const followingResponse = await fetch("/following_1.json");
         if (!followingResponse.ok) {
           throw new Error(
             `Failed to fetch following.json: ${followingResponse.statusText}`
@@ -19,7 +19,7 @@ const Friends = () => {
         const following = await followingResponse.json();
 
         // Fetch followers data
-        const followersResponse = await fetch("/followers.json");
+        const followersResponse = await fetch("/followers_1.json");
         if (!followersResponse.ok) {
           throw new Error(
             `Failed to fetch followers.json: ${followersResponse.statusText}`
