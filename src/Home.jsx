@@ -14,8 +14,24 @@ import DigitalClock from "./Components/DigitalClock";
 import DogAgeCalculator from "./Components/DogAgeCalculator";
 import ShoppingList from "./Components/ShippingList";
 import Friends from "./Components/Friends";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
+  useEffect(() => {
+    // Example of a simple scroll animation
+    gsap.to(".scroll-element", {
+      scrollTrigger: {
+        trigger: ".scroll-element",
+        start: "top center", // Start the animation when the top of the element hits the center of the viewport
+        end: "bottom top", // End the animation when the bottom of the element hits the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+      x: 100, // Example of a property to animate
+      opacity: 1,
+    });
+  }, []);
+
   const [investments, setInvestments] = useState([]);
   const [chartData, setChartData] = useState([]);
 
@@ -50,20 +66,23 @@ const Home = () => {
   }, [investments]);
 
   return (
-    <div className="App">
-      <h1>Simulador de Inversiones</h1>
-      <InvestmentForm addInvestment={addInvestment} />
-      <InvestmentList investments={investments} />
-      <InvestmentChart data={chartData} />
-      <LimitedCounter />
-      <RandomImageGallery />
-      <CurrencyConverter />
-      <TrafficLight />
-      <RandomQuoteGenerator />
-      <DigitalClock />
-      <DogAgeCalculator />
-      <ShoppingList />
-    </div>
+    <>
+      {" "}
+      <div className="App">
+        <h1>Simulador de Inversiones</h1>
+        <InvestmentForm addInvestment={addInvestment} />
+        <InvestmentList investments={investments} />
+        <InvestmentChart data={chartData} />
+        <LimitedCounter />
+        <RandomImageGallery />
+        <CurrencyConverter />
+        <TrafficLight />
+        <RandomQuoteGenerator />
+        <DigitalClock />
+        <DogAgeCalculator />
+        <ShoppingList />
+      </div>
+    </>
   );
 };
 

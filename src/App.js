@@ -17,7 +17,26 @@ import ShoppingList from "./Components/ShippingList";
 import Friends from "./Components/Friends";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
+  useEffect(() => {
+    // Example of a simple scroll animation
+    gsap.to(".scroll-element", {
+      scrollTrigger: {
+        trigger: ".scroll-element",
+        start: "top center", // Start the animation when the top of the element hits the center of the viewport
+        end: "bottom top", // End the animation when the bottom of the element hits the top of the viewport
+        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      },
+      x: 100, // Example of a property to animate
+      opacity: 1,
+    });
+  }, []);
+
   return (
     <>
       <BrowserRouter>
