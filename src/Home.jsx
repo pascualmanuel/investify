@@ -14,24 +14,9 @@ import DigitalClock from "./Components/DigitalClock";
 import DogAgeCalculator from "./Components/DogAgeCalculator";
 import ShoppingList from "./Components/ShippingList";
 import Friends from "./Components/Friends";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SmoothScroll from "./Components/SmoothScroll";
 
-gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
-  useEffect(() => {
-    // Example of a simple scroll animation
-    gsap.to(".scroll-element", {
-      scrollTrigger: {
-        trigger: ".scroll-element",
-        start: "top center", // Start the animation when the top of the element hits the center of the viewport
-        end: "bottom top", // End the animation when the bottom of the element hits the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      },
-      x: 100, // Example of a property to animate
-      opacity: 1,
-    });
-  }, []);
-
   const [investments, setInvestments] = useState([]);
   const [chartData, setChartData] = useState([]);
 
@@ -67,7 +52,6 @@ const Home = () => {
 
   return (
     <>
-      {" "}
       <div className="App">
         <h1>Simulador de Inversiones</h1>
         <InvestmentForm addInvestment={addInvestment} />
@@ -81,6 +65,12 @@ const Home = () => {
         <DigitalClock />
         <DogAgeCalculator />
         <ShoppingList />
+        <div style={{ height: "100vh", backgroundColor: "lime" }}></div>
+        <div style={{ height: "100vh", backgroundColor: "lightskyblue" }}></div>
+        <div style={{ height: "100vh", backgroundColor: "mediumpurple" }}></div>
+        <div style={{ height: "100vh", backgroundColor: "orchid" }}></div>
+        <div style={{ height: "100vh", backgroundColor: "red" }}></div>
+        <div style={{ height: "100vh", backgroundColor: "orange" }}></div>
       </div>
     </>
   );

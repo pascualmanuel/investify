@@ -10,6 +10,20 @@ body {
   /* height: 100vh; */
 }
 
+.smooth-scroll-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Make sure container takes full viewport height */
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
 .App {
   background: #fff;
   padding: 2rem;

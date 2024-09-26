@@ -19,6 +19,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SmoothScroll from "./Components/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="/scroll" element={<SmoothScroll />} />
         </Routes>
       </BrowserRouter>
     </>
