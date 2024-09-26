@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <>
       <div className="App">
-        <h1>Simulador de Inversiones</h1>
+        River plate es más grande
         <InvestmentForm addInvestment={addInvestment} />
         <InvestmentList investments={investments} />
         <InvestmentChart data={chartData} />
