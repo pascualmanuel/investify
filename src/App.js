@@ -25,7 +25,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    // Example of a simple scroll animation
+
     gsap.to(".scroll-element", {
       scrollTrigger: {
         trigger: ".scroll-element",
@@ -33,7 +33,7 @@ function App() {
         end: "bottom top", // End the animation when the bottom of the element hits the top of the viewport
         scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       },
-      x: 100, // Example of a property to animate
+      x: 100, 
       opacity: 1,
     });
   }, []);
