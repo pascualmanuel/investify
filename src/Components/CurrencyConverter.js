@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const CurrencyConverter = () => {
-  const [amount, setAmount] = useState("1");
+  const [amount, setAmount] = useState("");
   const [dolar, setDolar] = useState([]);
 
   useEffect(() => {
@@ -10,8 +10,8 @@ const CurrencyConverter = () => {
       .then((data) => setDolar(data));
   }, []);
 
-  const exchangeRateSell = dolar?.blue?.value_sell;
-  const exchangeRateBuy = dolar?.blue?.value_buy;
+  const exchangeRateSell = dolar?.blue?.value_sell; // USD to ARS exchange rate (Venta)
+  const exchangeRateBuy = dolar?.blue?.value_buy; // USD to ARS exchange rate (Compra)
 
   const formatNumber = (num) => {
     return num.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -28,11 +28,15 @@ const CurrencyConverter = () => {
   };
 
   const calculateAmount = (value, rate) => {
-    const numericValue = parseInt(value.replace(/\./g, ""));
-    if (isNaN(numericValue)) return "";
-    return numericValue
-      ? (numericValue * rate).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-      : "";
+    const numericValue = value ? parseInt(value.replace(/\./g, "")) : 0;
+
+    // If the amount is 0 or empty, show the exchange rate value for 1 USD, formatted with dot separators
+    if (numericValue === 0) return rate ? formatNumber(rate.toFixed(0)) : "0";
+
+    // Otherwise, calculate the conversion for the given amount
+    return (numericValue * rate)
+      .toFixed(0)
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
   return (
@@ -44,12 +48,13 @@ const CurrencyConverter = () => {
         onChange={handleChange}
         placeholder="USD"
       />
-      <p>
-        {amount} USD Compra = {calculateAmount(amount, exchangeRateBuy)}
+      <p className="">
+        {amount || ""} USD Compra = {calculateAmount(amount, exchangeRateBuy)}{" "}
         ARS
         <br />
         <br />
-        {amount} USD Venta = {calculateAmount(amount, exchangeRateSell)} ARS
+        {amount || ""} USD Venta = {calculateAmount(amount, exchangeRateSell)}{" "}
+        ARS
       </p>
     </div>
   );
