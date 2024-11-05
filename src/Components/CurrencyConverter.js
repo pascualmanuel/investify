@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const CurrencyConverter = () => {
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState("1");
   const [dolar, setDolar] = useState([]);
 
   useEffect(() => {
@@ -45,7 +45,8 @@ const CurrencyConverter = () => {
         placeholder="USD"
       />
       <p>
-        {amount} USD Compra = {calculateAmount(amount, exchangeRateBuy)} ARS
+        {amount} USD Compra = {calculateAmount(amount, exchangeRateBuy)}
+        ARS
         <br />
         <br />
         {amount} USD Venta = {calculateAmount(amount, exchangeRateSell)} ARS
