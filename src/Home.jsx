@@ -53,13 +53,13 @@ const Home = () => {
   return (
     <>
       <div className="App">
+        <CurrencyConverter />
         <h1>Simulador de Inversiones</h1>
         <InvestmentForm addInvestment={addInvestment} />
         <InvestmentList investments={investments} />
         <InvestmentChart data={chartData} />
         <LimitedCounter />
         <RandomImageGallery />
-        <CurrencyConverter />
         <TrafficLight />
         <RandomQuoteGenerator />
         <DigitalClock />
