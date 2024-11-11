@@ -13,7 +13,7 @@ import TrafficLight from "./Components/TrafficLight";
 import RandomQuoteGenerator from "./Components/RandomQuote";
 import DigitalClock from "./Components/DigitalClock";
 import DogAgeCalculator from "./Components/DogAgeCalculator";
-import ShoppingList from "./Components/ShippingList";
+import CurrencyChatBot from "./Components/CurrencyChatBot";
 import Friends from "./Components/Friends";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
@@ -25,7 +25,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-
     gsap.to(".scroll-element", {
       scrollTrigger: {
         trigger: ".scroll-element",
@@ -33,7 +32,7 @@ function App() {
         end: "bottom top", // End the animation when the bottom of the element hits the top of the viewport
         scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       },
-      x: 100, 
+      x: 100,
       opacity: 1,
     });
   }, []);
@@ -45,6 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/friends" element={<Friends />} />
           <Route path="/scroll" element={<SmoothScroll />} />
+          <Route path="/chatbot" element={<CurrencyChatBot />} />
         </Routes>
       </BrowserRouter>
     </>
