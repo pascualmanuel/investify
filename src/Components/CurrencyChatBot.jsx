@@ -48,26 +48,9 @@ const CurrencyChatBot = () => {
       message.toLowerCase().includes("dolar") ||
       message.toLowerCase().includes("dólar")
     ) {
-      // Set the context to handle dollar-specific questions
-      setBotResponse(
-        "¿Qué tipo de dólar necesitas? Blue compra, Blue venta, Oficial compra, Oficial venta."
-      );
+      // Set the context to handle dollar-specific questions and show buttons
+      setBotResponse("Por favor, selecciona el tipo de dólar que necesitas:");
       setContext("dolarQuery");
-    } else if (context === "dolarQuery") {
-      // Handle the user's response to the dollar type question
-      if (message.toLowerCase().includes("blue compra")) {
-        fetchDolar("blueCompra");
-      } else if (message.toLowerCase().includes("blue venta")) {
-        fetchDolar("blueVenta");
-      } else if (message.toLowerCase().includes("oficial compra")) {
-        fetchDolar("oficialCompra");
-      } else if (message.toLowerCase().includes("oficial venta")) {
-        fetchDolar("oficialVenta");
-      } else {
-        setBotResponse(
-          "Lo siento, no entendí. ¿Podrías repetir el tipo de dólar?"
-        );
-      }
     } else {
       setBotResponse("Lo siento, no entendí eso.");
     }
@@ -130,6 +113,25 @@ const CurrencyChatBot = () => {
             <p>{botResponse}</p>
           </div>
         </div>
+
+        {/* Render buttons if context is asking for dollar type */}
+        {context === "dolarQuery" && (
+          <div className="button-container">
+            <button onClick={() => fetchDolar("blueCompra")}>
+              Blue Compra
+            </button>
+            <br /> <br />
+            <button onClick={() => fetchDolar("blueVenta")}>Blue Venta</button>
+            <br /> <br />
+            <button onClick={() => fetchDolar("oficialCompra")}>
+              Oficial Compra
+            </button>
+            <br /> <br />
+            <button onClick={() => fetchDolar("oficialVenta")}>
+              Oficial Venta
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
