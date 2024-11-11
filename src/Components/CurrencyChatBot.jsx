@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const CurrencyChatBot = () => {
   const [userMessage, setUserMessage] = useState("");
   const [botResponse, setBotResponse] = useState("");
+  const [context, setContext] = useState(null); // New context state to handle conversation
   const [exchangeRates, setExchangeRates] = useState({
     BTC: null,
     ETH: null,
@@ -10,7 +11,7 @@ const CurrencyChatBot = () => {
   });
 
   useEffect(() => {
-    // Fetch prices for BTC, ETH, USD (using CoinGecko)
+    // Fetch prices for BTC and ETH from CoinGecko
     fetch(
       "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd"
     )
@@ -19,7 +20,7 @@ const CurrencyChatBot = () => {
         setExchangeRates({
           BTC: data.bitcoin.usd,
           ETH: data.ethereum.usd,
-          USD: null, // We'll handle the dollar fetch separately
+          USD: null, // USD handled separately
         });
       })
       .catch((error) =>
@@ -29,28 +30,47 @@ const CurrencyChatBot = () => {
 
   const handleUserMessage = (message) => {
     setUserMessage(message);
-    let response = "Lo siento, no entendí eso.";
 
     // Check if the message is asking for a cryptocurrency price
     if (
       message.toLowerCase().includes("btc") ||
       message.toLowerCase().includes("bitcoin")
     ) {
-      response = `El precio actual de 1 BTC es ${exchangeRates.BTC} USD.`;
+      setBotResponse(`El precio actual de 1 BTC es ${exchangeRates.BTC} USD.`);
+      setContext(null); // Reset context
     } else if (
       message.toLowerCase().includes("eth") ||
       message.toLowerCase().includes("ethereum")
     ) {
-      response = `El precio actual de 1 ETH es ${exchangeRates.ETH} USD.`;
+      setBotResponse(`El precio actual de 1 ETH es ${exchangeRates.ETH} USD.`);
+      setContext(null); // Reset context
     } else if (
       message.toLowerCase().includes("dolar") ||
       message.toLowerCase().includes("dólar")
     ) {
-      response =
-        "¿Qué tipo de dólar necesitas? Blue compra, Blue venta, Oficial compra, Oficial venta.";
+      // Set the context to handle dollar-specific questions
+      setBotResponse(
+        "¿Qué tipo de dólar necesitas? Blue compra, Blue venta, Oficial compra, Oficial venta."
+      );
+      setContext("dolarQuery");
+    } else if (context === "dolarQuery") {
+      // Handle the user's response to the dollar type question
+      if (message.toLowerCase().includes("blue compra")) {
+        fetchDolar("blueCompra");
+      } else if (message.toLowerCase().includes("blue venta")) {
+        fetchDolar("blueVenta");
+      } else if (message.toLowerCase().includes("oficial compra")) {
+        fetchDolar("oficialCompra");
+      } else if (message.toLowerCase().includes("oficial venta")) {
+        fetchDolar("oficialVenta");
+      } else {
+        setBotResponse(
+          "Lo siento, no entendí. ¿Podrías repetir el tipo de dólar?"
+        );
+      }
+    } else {
+      setBotResponse("Lo siento, no entendí eso.");
     }
-
-    setBotResponse(response);
   };
 
   const fetchDolar = (type) => {
@@ -80,19 +100,9 @@ const CurrencyChatBot = () => {
             .replace(/([A-Z])/g, " $1")
             .toLowerCase()} es ${rate} ARS.`
         );
+        setContext(null); // Reset context after answering
       })
       .catch((error) => console.error("Error fetching USD data:", error));
-  };
-
-  const handleBotResponse = () => {
-    if (botResponse.includes("dólar")) {
-      // Ask for the type of dollar
-      setBotResponse(
-        "¿Qué tipo de dólar necesitas? Blue compra, Blue venta, Oficial compra, Oficial venta."
-      );
-    } else {
-      setBotResponse("Lo siento, no entendí eso.");
-    }
   };
 
   return (
@@ -119,17 +129,6 @@ const CurrencyChatBot = () => {
           <div className="bot-response">
             <p>{botResponse}</p>
           </div>
-        </div>
-
-        <div className="button-container">
-          <button onClick={() => fetchDolar("blueCompra")}>Blue Compra</button>
-          <button onClick={() => fetchDolar("blueVenta")}>Blue Venta</button>
-          <button onClick={() => fetchDolar("oficialCompra")}>
-            Oficial Compra
-          </button>
-          <button onClick={() => fetchDolar("oficialVenta")}>
-            Oficial Venta
-          </button>
         </div>
       </div>
     </div>
