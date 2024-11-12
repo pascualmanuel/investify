@@ -1,140 +1,122 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const CurrencyChatBot = () => {
-  const [userMessage, setUserMessage] = useState("");
+const Bot = () => {
+  const [userInput, setUserInput] = useState("");
   const [botResponse, setBotResponse] = useState("");
-  const [context, setContext] = useState(null); // New context state to handle conversation
-  const [exchangeRates, setExchangeRates] = useState({
-    BTC: null,
-    ETH: null,
-    USD: null,
-  });
 
-  useEffect(() => {
-    // Fetch prices for BTC and ETH from CoinGecko
-    fetch(
-      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setExchangeRates({
-          BTC: data.bitcoin.usd,
-          ETH: data.ethereum.usd,
-          USD: null, // USD handled separately
-        });
-      })
-      .catch((error) =>
-        console.error("Error fetching cryptocurrency data:", error)
+  const handleInputChange = (event) => {
+    setUserInput(event.target.value);
+  };
+
+  const queryWitAI = async (message) => {
+    try {
+      const response = await fetch(
+        `https://api.wit.ai/message?v=20220101&q=${encodeURIComponent(
+          message
+        )}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_WITAI_SERVER_TOKEN}`,
+          },
+        }
       );
-  }, []);
 
-  const handleUserMessage = (message) => {
-    setUserMessage(message);
+      // Verificamos si la respuesta fue exitosa
+      if (!response.ok) {
+        throw new Error("Error al consultar Wit.ai");
+      }
 
-    // Check if the message is asking for a cryptocurrency price
-    if (
-      message.toLowerCase().includes("btc") ||
-      message.toLowerCase().includes("bitcoin")
-    ) {
-      setBotResponse(`El precio actual de 1 BTC es ${exchangeRates.BTC} USD.`);
-      setContext(null); // Reset context
-    } else if (
-      message.toLowerCase().includes("eth") ||
-      message.toLowerCase().includes("ethereum")
-    ) {
-      setBotResponse(`El precio actual de 1 ETH es ${exchangeRates.ETH} USD.`);
-      setContext(null); // Reset context
-    } else if (
-      message.toLowerCase().includes("dolar") ||
-      message.toLowerCase().includes("dólar")
-    ) {
-      // Set the context to handle dollar-specific questions and show buttons
-      setBotResponse("Por favor, selecciona el tipo de dólar que necesitas:");
-      setContext("dolarQuery");
-    } else {
-      setBotResponse("Lo siento, no entendí eso.");
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error al consultar Wit.ai:", error);
+      return {}; // Retornamos un objeto vacío en caso de error
     }
   };
 
-  const fetchDolar = (type) => {
-    // Fetch USD rate from Bluelytics for the selected type (buy/sell)
-    fetch("https://api.bluelytics.com.ar/v2/latest")
-      .then((response) => response.json())
-      .then((data) => {
-        let rate = null;
-        switch (type) {
-          case "blueCompra":
-            rate = data.blue.value_buy;
-            break;
-          case "blueVenta":
-            rate = data.blue.value_sell;
-            break;
-          case "oficialCompra":
-            rate = data.oficial.value_buy;
-            break;
-          case "oficialVenta":
-            rate = data.oficial.value_sell;
-            break;
-          default:
-            rate = null;
+  const fetchBTCPrice = async () => {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+    );
+    const data = await response.json();
+    return data.bitcoin.usd;
+  };
+
+  const fetchETHPrice = async () => {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
+    );
+    const data = await response.json();
+    return data.ethereum.usd;
+  };
+
+  const fetchHistoricalPrice = async (date) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_BLUELYTICS_API_URL}?day=${date}`
+    );
+    const data = await response.json();
+    return data.blue.value_sell;
+  };
+
+  const fetchDolarBlueToday = async () => {
+    const response = await fetch("https://api.bluelytics.com.ar/v2/latest");
+    const data = await response.json();
+    return data.blue.value_sell;
+  };
+
+  const handleBotResponse = async () => {
+    try {
+      const witResponse = await queryWitAI(userInput);
+      const intent = witResponse?.intents?.[0]?.name; // Validar que 'intents' exista
+      const entities = witResponse?.entities;
+
+      let response = "Lo siento, no entendí eso.";
+
+      if (intent === "precio_actual") {
+        if (entities?.moneda?.[0]?.value === "BTC") {
+          const price = await fetchBTCPrice();
+          response = `El precio actual de BTC es ${price} USD.`;
+        } else if (entities?.moneda?.[0]?.value === "ETH") {
+          const price = await fetchETHPrice();
+          response = `El precio actual de ETH es ${price} USD.`;
         }
-        setBotResponse(
-          `El precio del dólar ${type
-            .replace(/([A-Z])/g, " $1")
-            .toLowerCase()} es ${rate} ARS.`
-        );
-        setContext(null); // Reset context after answering
-      })
-      .catch((error) => console.error("Error fetching USD data:", error));
+      } else if (intent === "cotizacion_historica") {
+        const moneda = entities?.moneda?.[0]?.value;
+        const fecha = entities?.fecha?.[0]?.value;
+        if (moneda && fecha) {
+          const historicalPrice = await fetchHistoricalPrice(fecha);
+          response = `El precio de ${moneda} el ${fecha} era de ${historicalPrice} ARS.`;
+        }
+      } else {
+        response = "No pude entender tu consulta.";
+      }
+
+      setBotResponse(response);
+    } catch (error) {
+      console.error("Error en la respuesta del bot:", error);
+      setBotResponse("Ocurrió un error al procesar tu solicitud.");
+    }
   };
 
   return (
-    <div className="chat-container">
-      <br />
-      <br />
-      <br />
-      <div className="chat-box">
-        <div className="messages">
-          <div className="user-message">
-            <input
-              type="text"
-              value={userMessage}
-              onChange={(e) => setUserMessage(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  handleUserMessage(userMessage);
-                }
-              }}
-              placeholder="Escribe tu pregunta..."
-            />
-          </div>
-
-          <div className="bot-response">
-            <p>{botResponse}</p>
-          </div>
-        </div>
-
-        {/* Render buttons if context is asking for dollar type */}
-        {context === "dolarQuery" && (
-          <div className="button-container">
-            <button onClick={() => fetchDolar("blueCompra")}>
-              Blue Compra
-            </button>
-            <br /> <br />
-            <button onClick={() => fetchDolar("blueVenta")}>Blue Venta</button>
-            <br /> <br />
-            <button onClick={() => fetchDolar("oficialCompra")}>
-              Oficial Compra
-            </button>
-            <br /> <br />
-            <button onClick={() => fetchDolar("oficialVenta")}>
-              Oficial Venta
-            </button>
-          </div>
-        )}
+    <div>
+      <div>
+        <input
+          type="text"
+          value={userInput}
+          onChange={handleInputChange}
+          placeholder="Escribe tu pregunta"
+        />
+        <button onClick={handleBotResponse}>Enviar</button>
+      </div>
+      <div>
+        <p>
+          <strong>Respuesta del Bot:</strong> {botResponse}
+        </p>
       </div>
     </div>
   );
 };
 
-export default CurrencyChatBot;
+export default Bot;
