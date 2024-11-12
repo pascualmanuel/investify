@@ -55,16 +55,35 @@ const CurrencyChatBot = () => {
   // Obtener el precio actual (Dólar, BTC, ETH)
   const getCurrentPrice = async () => {
     try {
-      // Llamada a la API de CoinGecko para obtener el precio actual de BTC o ETH
-      const response = await fetch(
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd"
-      );
-      const data = await response.json();
-      const btcPrice = data.bitcoin.usd;
-      const ethPrice = data.ethereum.usd;
-      setResponse(
-        `El precio actual de Bitcoin es $${btcPrice} USD y Ethereum es $${ethPrice} USD.`
-      );
+      if (userInput.toLowerCase().includes("dolar blue")) {
+        // Obtener el precio del Dólar Blue
+        const response = await fetch("https://api.bluelytics.com.ar/v2/latest");
+        const data = await response.json();
+        setResponse(
+          `El precio actual del Dólar Blue es $${data.blue.value_sell} ARS.`
+        );
+      } else if (userInput.toLowerCase().includes("btc")) {
+        // Llamada a la API de CoinGecko para obtener el precio de BTC
+        const response = await fetch(
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+        );
+        const data = await response.json();
+        const btcPrice = data.bitcoin.usd;
+        setResponse(`El precio actual de Bitcoin es $${btcPrice} USD.`);
+      } else if (userInput.toLowerCase().includes("eth")) {
+        // Llamada a la API de CoinGecko para obtener el precio de ETH
+        const response = await fetch(
+          "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
+        );
+        const data = await response.json();
+        const ethPrice = data.ethereum.usd;
+        setResponse(`El precio actual de Ethereum es $${ethPrice} USD.`);
+      } else {
+        // Si no se especifica ninguna criptomoneda, devolver un mensaje genérico
+        setResponse(
+          "Por favor, especifica una criptomoneda válida (BTC o ETH)."
+        );
+      }
     } catch (error) {
       console.error("Error al obtener el precio actual:", error);
       setResponse("Hubo un error al obtener el precio actual.");
@@ -80,22 +99,24 @@ const CurrencyChatBot = () => {
     }
 
     try {
-      // Llamada a la API de Bluelytics para obtener el precio histórico del Dólar Blue
       if (userInput.toLowerCase().includes("dolar blue")) {
+        // Formatear la fecha como "yyyy-mm-dd" para Bluelytics
+        const formattedDate = formatDate(date);
         const response = await fetch(
-          `https://api.bluelytics.com.ar/v2/historical?day=${date}`
+          `https://api.bluelytics.com.ar/v2/historical?day=${formattedDate}`
         );
         const data = await response.json();
         setResponse(
-          `El precio del Dólar Blue el ${date} era $${data.blue.value_sell} ARS.`
+          `El precio del Dólar Blue el ${formattedDate} era $${data.blue.value_sell} ARS.`
         );
       } else {
         // Llamada a la API de CoinGecko para obtener el precio histórico de BTC o ETH
         const coin = userInput.toLowerCase().includes("btc")
           ? "bitcoin"
           : "ethereum";
+        const formattedDate = formatDate(date);
         const response = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${coin}/history?date=${date}&localization=false`
+          `https://api.coingecko.com/api/v3/coins/${coin}/history?date=${formattedDate}&localization=false`
         );
         const data = await response.json();
         const price =
@@ -103,7 +124,7 @@ const CurrencyChatBot = () => {
             ? data.market_data.current_price.usd
             : data.market_data.current_price.usd;
         setResponse(
-          `El precio de ${coin.toUpperCase()} el ${date} era $${price} USD.`
+          `El precio de ${coin.toUpperCase()} el ${formattedDate} era $${price} USD.`
         );
       }
     } catch (error) {
@@ -153,7 +174,13 @@ const CurrencyChatBot = () => {
   const extractDate = (input) => {
     // Regex para extraer la fecha en formato dd/mm/yyyy o dd-mm-yyyy
     const match = input.match(/\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4}/);
-    return match ? match[0].replace(/\/|-/g, "") : null;
+    return match ? match[0] : null;
+  };
+
+  const formatDate = (date) => {
+    // Convertir la fecha al formato yyyy-mm-dd
+    const parts = date.split(/[\/\-]/);
+    return `${parts[2]}-${parts[1]}-${parts[0]}`;
   };
 
   const extractInvestmentData = (input) => {
@@ -162,7 +189,7 @@ const CurrencyChatBot = () => {
       /(\d+)\s*(usd|dolares)\s*(el\s*\d{1,2}[\-\/]\d{1,2}[\-\/]\d{4})/i
     );
     if (match) {
-      return [match[1], match[3].replace(/[\-\/]/g, "")];
+      return [match[1], match[3].trim()];
     }
     return [null, null];
   };
@@ -176,7 +203,7 @@ const CurrencyChatBot = () => {
         placeholder="Escribe tu consulta"
       />
       <button onClick={handleSendMessage}>Enviar</button>
-      <div>Respuesta del bot: {response}</div>
+      <p>{response}</p>
     </div>
   );
 };
