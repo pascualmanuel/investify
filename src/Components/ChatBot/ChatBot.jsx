@@ -1,106 +1,64 @@
-// Chatbot.js
 import React, { useState } from "react";
+import axios from "axios";
 
 const Chatbot = () => {
+  const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [userInput, setUserInput] = useState("");
 
-  const handleInputChange = (e) => {
-    setUserInput(e.target.value);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const sendMessage = async () => {
-    if (!userInput.trim()) return;
-
-    const newMessages = [...messages, { sender: "user", text: userInput }];
+    const newMessages = [...messages, { text: input, sender: "user" }];
     setMessages(newMessages);
-    setUserInput("");
 
-    // Generar respuesta
-    const response = await getChatbotResponse(userInput);
-
-    // Guardar la interacción
-    await storeInteraction(userInput, response);
-
-    // Actualizar mensajes
-    setMessages([...newMessages, { sender: "bot", text: response }]);
-  };
-
-  const getChatbotResponse = async (input) => {
-    const lowerInput = input.toLowerCase();
-
-    // Verificar si está pidiendo cotización de criptomonedas (ejemplo: "precio bitcoin")
-    if (
-      lowerInput.includes("precio") &&
-      (lowerInput.includes("bitcoin") || lowerInput.includes("btc"))
-    ) {
-      return await fetchCryptoPrice("bitcoin");
-    }
-
-    // Verificar si está pidiendo cotización del dólar
-    if (
-      lowerInput.includes("dólar") ||
-      lowerInput.includes("usd") ||
-      lowerInput.includes("dolar")
-    ) {
-      return await fetchDollarPrice();
-    }
-
-    // Respuesta por defecto para temas desconocidos
-    return `Soy un chatbot especializado en cotizaciones de criptomonedas y del dólar. Pregúntame el precio del bitcoin o el dólar.`;
-  };
-
-  const fetchCryptoPrice = async (cryptoId) => {
     try {
-      const res = await fetch(
-        `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=usd`
+      const response = await axios.post(
+        "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill",
+        { inputs: input },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_HUGGINGFACE_API_TOKEN}`,
+          },
+        }
       );
-      const data = await res.json();
-      return `El precio de ${
-        cryptoId.charAt(0).toUpperCase() + cryptoId.slice(1)
-      } es $${data[cryptoId].usd} USD.`;
-    } catch (error) {
-      return "Lo siento, no pude obtener el precio de la criptomoneda en este momento.";
-    }
-  };
 
-  const fetchDollarPrice = async () => {
-    try {
-      const res = await fetch("https://api.bluelytics.com.ar/v2/latest");
-      const data = await res.json();
-      const oficial = data.oficial;
-      const blue = data.blue;
-      return `Cotización del dólar:\n- Oficial: Compra $${oficial.value_buy} / Venta $${oficial.value_sell}\n- Blue: Compra $${blue.value_buy} / Venta $${blue.value_sell}`;
+      setMessages([
+        ...newMessages,
+        { text: response.data.generated_text, sender: "bot" },
+      ]);
     } catch (error) {
-      return "Lo siento, no pude obtener la cotización del dólar en este momento.";
+      console.error("Error al obtener la respuesta del modelo:", error);
+      setMessages([
+        ...newMessages,
+        { text: "Lo siento, no pude procesar tu solicitud.!!", sender: "bot" },
+      ]);
     }
-  };
 
-  const storeInteraction = async (userQuery, botResponse) => {
-    await fetch("https://api.magicloops.com/store", {
-      method: "POST",
-      body: JSON.stringify({ userQuery, botResponse }),
-      headers: { "Content-Type": "application/json" },
-    });
+    setInput("");
   };
 
   return (
-    <div className="chatbot-container">
-      <div className="chatbot-messages">
-        {messages.map((msg, index) => (
-          <div key={index} className={msg.sender}>
+    <div>
+      <h1>Chatbot</h1>
+      <div>
+        {messages.map((msg, idx) => (
+          <p
+            key={idx}
+            style={{ color: msg.sender === "user" ? "blue" : "green" }}
+          >
             {msg.text}
-          </div>
+          </p>
         ))}
       </div>
-      <input
-        type="text"
-        value={userInput}
-        onChange={handleInputChange}
-        onKeyPress={(e) => (e.key === "Enter" ? sendMessage() : null)}
-        placeholder="Escribe algo...!1"
-      />
-      <button onClick={sendMessage}>Enviar</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Escribe tu mensaje..."
+        />
+        <button type="submit">Enviar</button>
+      </form>
     </div>
   );
 };
