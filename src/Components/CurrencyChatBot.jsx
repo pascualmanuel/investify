@@ -19,7 +19,7 @@ const CurrencyChatBot = () => {
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer 3KW3TSEYBFXAFTDNVW4KF24QNKNHUSVB`,
+            Authorization: `Bearer  ${process.env.REACT_APP_WITAI_SERVER_TOKEN}`,
           },
         }
       );
