@@ -84,3 +84,52 @@ ul li {
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }
+
+/* styles.css */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-messages {
+  padding: 10px;
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.chatbot-messages .user {
+  text-align: right;
+  margin: 5px;
+  color: #000;
+}
+
+.chatbot-messages .bot {
+  text-align: left;
+  margin: 5px;
+  color: #007bff;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 18%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
