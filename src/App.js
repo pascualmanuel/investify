@@ -14,7 +14,7 @@ import RandomQuoteGenerator from "./Components/RandomQuote";
 import DigitalClock from "./Components/DigitalClock";
 import DogAgeCalculator from "./Components/DogAgeCalculator";
 import CurrencyChatBot from "./Components/CurrencyChatBot";
-import ChatBot from "./Components/ChatBot/ChatBot";
+import ChatBot from "./Components/ChatBot/ChatBotViejo";
 import Friends from "./Components/Friends";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
