@@ -83,98 +83,35 @@ const CryptoBot = () => {
   };
 
   return (
-    <div style={styles.chatContainer}>
+    <div className="chat-container">
       <h2>Consulta de Criptomonedas 💬</h2>
-      <div style={styles.chatBox}>
+      <div className="chat-box">
         {messages.map((msg, index) => (
           <div
             key={index}
-            style={{
-              ...styles.message,
-              ...(msg.sender === "user"
-                ? styles.userMessage
-                : styles.botMessage),
-            }}
+            className={`message ${
+              msg.sender === "user" ? "user-message" : "bot-message"
+            }`}
           >
             {msg.text}
           </div>
         ))}
-        {isThinking && <div style={styles.thinking}>Pensando...</div>}
+        {isThinking && <div className="thinking">Pensando...</div>}
       </div>
-      <div style={styles.inputContainer}>
+      <div className="input-container">
         <input
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           placeholder="Escribe aquí... Ej: ¿A cuánto está el BTC?"
-          style={styles.input}
+          className="input"
         />
-        <button onClick={handleSend} style={styles.sendButton}>
+        <button onClick={handleSend} className="send-button">
           Enviar
         </button>
       </div>
     </div>
   );
-};
-
-// Estilos para el chat
-const styles = {
-  chatContainer: {
-    textAlign: "center",
-    marginTop: "20px",
-    fontFamily: "Arial, sans-serif",
-  },
-  chatBox: {
-    width: "80%",
-    maxHeight: "400px",
-    margin: "0 auto",
-    padding: "10px",
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    overflowY: "auto",
-    backgroundColor: "#f9f9f9",
-  },
-  message: {
-    padding: "10px",
-    borderRadius: "8px",
-    marginBottom: "10px",
-    maxWidth: "75%",
-  },
-  userMessage: {
-    backgroundColor: "#d1f0ff",
-    marginLeft: "auto",
-    textAlign: "right",
-  },
-  botMessage: {
-    backgroundColor: "#e1e1e1",
-    textAlign: "left",
-  },
-  thinking: {
-    fontStyle: "italic",
-    color: "#888",
-    textAlign: "left",
-    marginBottom: "10px",
-  },
-  inputContainer: {
-    display: "flex",
-    justifyContent: "center",
-    marginTop: "10px",
-  },
-  input: {
-    padding: "10px",
-    width: "70%",
-    borderRadius: "8px 0 0 8px",
-    border: "1px solid #ddd",
-    outline: "none",
-  },
-  sendButton: {
-    padding: "10px 20px",
-    backgroundColor: "#007bff",
-    color: "#fff",
-    border: "none",
-    borderRadius: "0 8px 8px 0",
-    cursor: "pointer",
-  },
 };
 
 export default CryptoBot;
