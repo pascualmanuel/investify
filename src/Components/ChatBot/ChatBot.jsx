@@ -12,6 +12,7 @@ const Chatbot = () => {
     setMessages(newMessages);
 
     try {
+      // Make a request to Hugging Face API using the pipeline
       const response = await axios.post(
         "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill",
         { inputs: input },
@@ -24,13 +25,13 @@ const Chatbot = () => {
 
       setMessages([
         ...newMessages,
-        { text: response.data.generated_text, sender: "bot" },
+        { text: response.data[0].generated_text, sender: "bot" },
       ]);
     } catch (error) {
-      console.error("Error al obtener la respuesta del modelo:", error);
+      console.error("Error getting response from the model:", error);
       setMessages([
         ...newMessages,
-        { text: "Lo siento, no pude procesar tu solicitud.!!", sender: "bot" },
+        { text: "Sorry, I couldn't process your request!", sender: "bot" },
       ]);
     }
 
@@ -39,7 +40,7 @@ const Chatbot = () => {
 
   return (
     <div>
-      <h1>Chatbot</h1>
+      Chatbot
       <div>
         {messages.map((msg, idx) => (
           <p
@@ -55,9 +56,9 @@ const Chatbot = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Escribe tu mensaje..."
+          placeholder="Type your message..."
         />
-        <button type="submit">Enviar</button>
+        <button type="submit">Send</button>
       </form>
     </div>
   );
