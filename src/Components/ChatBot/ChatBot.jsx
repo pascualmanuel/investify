@@ -5,8 +5,7 @@ const Chatbot = () => {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
   const [isThinking, setIsThinking] = useState(false);
-  const accessToken = process.env.REACT_APP_WITAI_SERVER_TOKEN; // Reemplaza con tu token de Wit.ai
-
+  const accessToken = process.env.REACT_APP_WITAI_SERVER_TOKEN;
   const greetResponses = [
     "Hola! ¿En qué puedo ayudarte hoy? 😊",
     "Buenas! ¿Te ayudo con alguna cotización de criptos? 💰",
