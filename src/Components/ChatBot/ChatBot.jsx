@@ -84,7 +84,7 @@ const Chatbot = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      e.preventDefault(); // Evita el salto de línea
+      e.preventDefault();
       handleSend();
     }
   };
@@ -110,8 +110,8 @@ const Chatbot = () => {
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          onKeyDown={handleKeyPress} // Detecta el "Enter" al presionar una tecla
-          placeholder="Escribe aquí... Ej: ¿A cuánto está el BTC?"
+          onKeyDown={handleKeyPress}
+          placeholder="Escribe aquí... Ej: A cuánto está el BTC?"
           className="input"
         />
         <button onClick={handleSend} className="send-button">
