@@ -15,6 +15,7 @@ import DogAgeCalculator from "./Components/DogAgeCalculator";
 import ShoppingList from "./Components/ShippingList";
 import Friends from "./Components/Friends";
 import SmoothScroll from "./Components/SmoothScroll";
+import ChatBot from "./Components/ChatBot/Chatbot";
 
 const Home = () => {
   const [investments, setInvestments] = useState([]);
@@ -53,24 +54,7 @@ const Home = () => {
   return (
     <>
       <div className="App">
-        <CurrencyConverter />
-        <h1>Simulador de Inversiones</h1>
-        <InvestmentForm addInvestment={addInvestment} />
-        <InvestmentList investments={investments} />
-        <InvestmentChart data={chartData} />
-        <LimitedCounter />
-        <RandomImageGallery />
-        <TrafficLight />
-        <RandomQuoteGenerator />
-        <DigitalClock />
-        <DogAgeCalculator />
-        <ShoppingList />
-        <div style={{ height: "100vh", backgroundColor: "lime" }}></div>
-        <div style={{ height: "100vh", backgroundColor: "lightskyblue" }}></div>
-        <div style={{ height: "100vh", backgroundColor: "mediumpurple" }}></div>
-        <div style={{ height: "100vh", backgroundColor: "orchid" }}></div>
-        <div style={{ height: "100vh", backgroundColor: "red" }}></div>
-        <div style={{ height: "100vh", backgroundColor: "orange" }}></div>
+        <ChatBot />
       </div>
     </>
   );
