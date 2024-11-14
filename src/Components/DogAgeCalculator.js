@@ -15,9 +15,6 @@ const DogAgeCalculator = () => {
         onChange={(e) => SetAge(e.target.value)}
         placeholder="Age"
       />
-      <p>
-        {age} años humanos = {age * 7} años de perro
-      </p>
     </>
   );
 };
