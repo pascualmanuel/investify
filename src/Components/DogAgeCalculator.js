@@ -7,8 +7,6 @@ const DogAgeCalculator = () => {
 
   return (
     <>
-      <h3>Calculadora de Edad en Perros</h3>
-
       <input
         type="number"
         value={age}
