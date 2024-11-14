@@ -8,11 +8,11 @@ const Chatbot = () => {
   const accessToken = process.env.REACT_APP_WITAI_SERVER_TOKEN; // Reemplaza con tu token de Wit.ai
 
   const greetResponses = [
-    "¡Hola! ¿En qué puedo ayudarte hoy? 😊",
-    "¡Buenas! ¿Te ayudo con alguna cotización de criptos? 💰",
-    "¡Hey! ¿Buscas el precio de alguna criptomoneda?",
-    "¡Hola! Pregunta por cualquier moneda y te digo su valor actual. 🚀",
-    "¡Saludos! Dime en qué puedo ayudarte. 😄",
+    "Hola! ¿En qué puedo ayudarte hoy? 😊",
+    "Buenas! ¿Te ayudo con alguna cotización de criptos? 💰",
+    "Hey! Buscas el precio de alguna criptcomoneda?",
+    "Hola! Pregunta por cualquier moneda y te digo su valor actual. 🚀",
+    "Hola! Decime en qué puedo ayudarte. 😄",
   ];
 
   const fetchCryptoPrice = async (cryptoSymbol) => {
@@ -52,7 +52,7 @@ const Chatbot = () => {
       const cryptoEntity = data.entities["crypto:crypto"]?.[0]?.value;
 
       let botResponse =
-        "Hmm, no estoy seguro de lo que me preguntas. ¿Podrías intentarlo de nuevo?";
+        "mmm, no estoy seguro de lo que me preguntas. Podrías intentarlo de nuevo?";
 
       if (intent === "greet") {
         // Escoge un saludo aleatorio del array greetResponses
@@ -61,7 +61,7 @@ const Chatbot = () => {
       } else if (intent === "current_price" && cryptoEntity) {
         const price = await fetchCryptoPrice(cryptoEntity);
         if (price) {
-          botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD. 📈`;
+          botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD. `;
         } else {
           botResponse =
             "Lo siento, no pude obtener el precio en este momento. Intenta más tarde.";
