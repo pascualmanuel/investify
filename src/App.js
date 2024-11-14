@@ -12,7 +12,6 @@ import CurrencyConverter from "./Components/CurrencyConverter";
 import TrafficLight from "./Components/TrafficLight";
 import RandomQuoteGenerator from "./Components/RandomQuote";
 import DigitalClock from "./Components/DigitalClock";
-import DogAgeCalculator from "./Components/DogAgeCalculator";
 import CurrencyChatBot from "./Components/CurrencyChatBot";
 import ChatBot from "./Components/ChatBot/Chatbot";
 import Friends from "./Components/Friends";

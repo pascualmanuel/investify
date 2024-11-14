@@ -11,7 +11,7 @@ import CurrencyConverter from "./Components/CurrencyConverter";
 import TrafficLight from "./Components/TrafficLight";
 import RandomQuoteGenerator from "./Components/RandomQuote";
 import DigitalClock from "./Components/DigitalClock";
-import DogAgeCalculator from "./Components/DogAgeCalculator";
+
 import ShoppingList from "./Components/ShippingList";
 import Friends from "./Components/Friends";
 import SmoothScroll from "./Components/SmoothScroll";
