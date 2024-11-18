@@ -10,7 +10,7 @@ import LimitedCounter from "./Components/LimitedCounter";
 import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
 import TrafficLight from "./Components/TrafficLight";
-import RandomQuoteGenerator from "./Components/RandomQuote";
+
 import DigitalClock from "./Components/DigitalClock";
 import CurrencyChatBot from "./Components/CurrencyChatBot";
 import ChatBot from "./Components/ChatBot/Chatbot";
