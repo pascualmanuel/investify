@@ -52,7 +52,6 @@ const CurrencyChatBot = () => {
     }
   };
 
-  // Obtener el precio actual (Dólar, BTC, ETH)
   const getCurrentPrice = async () => {
     try {
       if (userInput.toLowerCase().includes("dolar blue")) {
