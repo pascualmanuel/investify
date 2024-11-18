@@ -14,6 +14,13 @@ const Chatbot = () => {
     "Hola! Decime en qué puedo ayudarte. 😄",
   ];
 
+  const farewellResponses = [
+    "¡Hasta luego! Que tengas un buen día. 👋",
+    "Chau! Si necesitas más ayuda, aquí estaré. 😊",
+    "¡Nos vemos! No dudes en volver si tienes más preguntas. 🚀",
+    "Adiós, cuídate mucho! 😄",
+    "Chau chau, ¡hasta la próxima! 👋",
+  ];
   const fetchCryptoPrice = async (cryptoSymbol) => {
     try {
       const response = await axios.get(
@@ -57,6 +64,12 @@ const Chatbot = () => {
         // Escoge un saludo aleatorio del array greetResponses
         botResponse =
           greetResponses[Math.floor(Math.random() * greetResponses.length)];
+      } else if (intent === "farewell") {
+        // Escoge una despedida aleatoria del array farewellResponses
+        botResponse =
+          farewellResponses[
+            Math.floor(Math.random() * farewellResponses.length)
+          ];
       } else if (intent === "current_price" && cryptoEntity) {
         const price = await fetchCryptoPrice(cryptoEntity);
         if (price) {
@@ -90,7 +103,7 @@ const Chatbot = () => {
 
   return (
     <div className="chat-container">
-      <h2>Consulta de Criptomonedas 💬</h2>
+      <h2>Crypto hoy</h2>
       <div className="chat-box">
         {messages.map((msg, index) => (
           <div
