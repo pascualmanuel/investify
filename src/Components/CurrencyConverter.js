@@ -9,7 +9,7 @@ const CurrencyConverter = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
-    // Fetch current exchange rate
+
     fetch("https://api.bluelytics.com.ar/v2/latest")
       .then((response) => response.json())
       .then((data) => setDolar(data));
