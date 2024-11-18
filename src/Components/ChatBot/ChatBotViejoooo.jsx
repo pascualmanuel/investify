@@ -12,7 +12,6 @@ const Chatbot = () => {
     setMessages(newMessages);
 
     try {
-      // Make a request to Hugging Face API using the pipeline
       const response = await axios.post(
         "https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill",
         { inputs: input },
