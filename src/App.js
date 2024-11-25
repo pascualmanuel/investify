@@ -11,7 +11,7 @@ import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
 import TrafficLight from "./Components/TrafficLight";
 
-import DigitalClock from "./Components/DigitalClock";
+import InstaFeed from "./Components/InstaFeed";
 import CurrencyChatBot from "./Components/CurrencyChatBot";
 import ChatBot from "./Components/ChatBot/Chatbot";
 import Friends from "./Components/Friends";
@@ -45,6 +45,8 @@ function App() {
           <Route path="/friends" element={<Friends />} />
           <Route path="/scroll" element={<SmoothScroll />} />
           <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/instafeed" element={<InstaFeed />} />
+          
         </Routes>
       </BrowserRouter>
     </>
