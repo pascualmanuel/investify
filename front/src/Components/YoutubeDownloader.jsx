@@ -7,22 +7,6 @@ const VideoDownloader = () => {
   const [error, setError] = useState("");
   const [progress, setProgress] = useState(0); // Estado para la barra de progreso
 
-  useEffect(() => {
-    // Crear WebSocket para recibir el progreso
-    const ws = new WebSocket("ws://localhost:8081");
-
-    ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      if (data.progress) {
-        setProgress(data.progress); // Actualizar el progreso
-      }
-    };
-
-    return () => {
-      ws.close(); // Cerrar WebSocket cuando el componente se desmonte
-    };
-  }, []);
-
   const handleDownload = async () => {
     if (!url) {
       setError("Por favor ingresa una URL.");
@@ -55,7 +39,22 @@ const VideoDownloader = () => {
     }
   };
 
-  console.log(progress);
+  const handleDirectDownload = async () => {
+    if (downloadLink) {
+      try {
+        const response = await fetch(downloadLink);
+        const blob = await response.blob(); // Convertir la URL a un blob
+        const url = window.URL.createObjectURL(blob); // Crear una URL temporal para el archivo
+        const a = document.createElement("a"); // Crear un enlace programático
+        a.href = url;
+        a.download = downloadLink.split("/").pop(); // Establecer el nombre del archivo
+        a.click(); // Simular el clic para descargar el archivo
+        window.URL.revokeObjectURL(url); // Revocar la URL una vez descargado
+      } catch (err) {
+        setError("Hubo un error al intentar descargar el archivo.");
+      }
+    }
+  };
 
   return (
     <div>
@@ -82,9 +81,10 @@ const VideoDownloader = () => {
       {downloadLink && (
         <div>
           <p>Video listo para descargar:</p>
-          <a href={downloadLink} download>
+          {/* Aquí, al hacer clic se forzará la descarga directamente */}
+          <button onClick={handleDirectDownload}>
             Haz clic aquí para descargar
-          </a>
+          </button>
         </div>
       )}
     </div>
