@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../Styles/VideoDownloader.css"; // Importamos el archivo de estilos
 
 const VideoDownloader = () => {
   const [url, setUrl] = useState("");
@@ -8,6 +9,12 @@ const VideoDownloader = () => {
   const [progress, setProgress] = useState(0); // Estado para la barra de progreso
 
   const handleDownload = async () => {
+    // Validar si la URL contiene 'youtube'
+    if (!url.includes("youtube.com/")) {
+      setError("Por favor ingresa una URL válida");
+      return;
+    }
+
     if (!url) {
       setError("Por favor ingresa una URL.");
       return;
@@ -57,32 +64,41 @@ const VideoDownloader = () => {
   };
 
   return (
-    <div>
-      <h2>Descargar Video de YouTube</h2>
+    <div className="yt-container">
+      <h2 className="yt-title">Descargar Video de YouTube</h2>
       <input
         type="text"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         placeholder="Ingresa la URL del video"
+        className="yt-input"
       />
-      <button onClick={handleDownload} disabled={isDownloading}>
+      <button
+        onClick={handleDownload}
+        // disabled={isDownloading || !url.includes("youtube")}
+        className="yt-button"
+      >
         {isDownloading ? "Descargando..." : "Descargar"}
       </button>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="yt-error">{error}</p>}
 
       {isDownloading && (
-        <div>
+        <div className="yt-progress-container">
           <p>Progreso: {Math.round(progress)}%</p>
-          <progress value={progress} max="100" />
+          <div className="yt-progress">
+            <div
+              className="yt-progress-bar"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
         </div>
       )}
 
       {downloadLink && (
         <div>
           <p>Video listo para descargar:</p>
-          {/* Aquí, al hacer clic se forzará la descarga directamente */}
-          <button onClick={handleDirectDownload}>
+          <button onClick={handleDirectDownload} className="yt-download-link">
             Haz clic aquí para descargar
           </button>
         </div>
