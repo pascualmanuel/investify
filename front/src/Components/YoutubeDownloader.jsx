@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const VideoDownloader = () => {
   const [url, setUrl] = useState("");
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadLink, setDownloadLink] = useState("");
   const [error, setError] = useState("");
+  const [progress, setProgress] = useState(0); // Estado para la barra de progreso
+
+  useEffect(() => {
+    // Crear WebSocket para recibir el progreso
+    const ws = new WebSocket("ws://localhost:8081");
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.progress) {
+        setProgress(data.progress); // Actualizar el progreso
+      }
+    };
+
+    return () => {
+      ws.close(); // Cerrar WebSocket cuando el componente se desmonte
+    };
+  }, []);
 
   const handleDownload = async () => {
     if (!url) {
       setError("Por favor ingresa una URL.");
-      return; 
+      return;
     }
 
     setIsDownloading(true);
@@ -38,6 +55,8 @@ const VideoDownloader = () => {
     }
   };
 
+  console.log(progress);
+
   return (
     <div>
       <h2>Descargar Video de YouTube</h2>
@@ -52,6 +71,13 @@ const VideoDownloader = () => {
       </button>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {isDownloading && (
+        <div>
+          <p>Progreso: {Math.round(progress)}%</p>
+          <progress value={progress} max="100" />
+        </div>
+      )}
 
       {downloadLink && (
         <div>
