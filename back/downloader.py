@@ -2,41 +2,54 @@ import os
 import yt_dlp
 import subprocess
 import sys
+import random
+import string
+
+def generate_random_name(length=10):
+    """Genera un nombre de archivo aleatorio."""
+    return 'ytbvideo' + ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
 
 def download_video(url):
     video_dir = os.path.abspath('./video')  # Obtiene la ruta absoluta
     if not os.path.exists(video_dir):
         os.makedirs(video_dir)  # Asegura que el directorio exista
 
+    random_name = generate_random_name()  # Genera un nombre aleatorio
+    temp_file_path = os.path.join(video_dir, f"{random_name}.webm")  # Nombre temporal para evitar conflictos
+    final_file_path = os.path.join(video_dir, f"{random_name}.mp4")  # Archivo final en MP4
+
     ydl_opts = {
         'format': 'bestvideo+bestaudio/best',
-        'outtmpl': os.path.join(video_dir, '%(title)s.%(ext)s'),  # Ruta absoluta
+        'outtmpl': temp_file_path,  # Usa el nombre aleatorio como salida
         'merge_output_format': 'webm',  # Guarda como .webm
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info_dict = ydl.extract_info(url, download=True)
-        video_title = info_dict.get('title', None)
-        file_path = os.path.join(video_dir, f"{video_title}.webm")
+        ydl.download([url])  # Descarga el video con el nombre aleatorio
 
-        print(f"Video descargado: {file_path}")
-        
-        # Convertir a mp4 para el cliente
-        output_mp4 = os.path.join(video_dir, f"{video_title}.mp4")
-        result = subprocess.run(['ffmpeg', '-i', file_path, output_mp4], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print(f"Video descargado temporalmente: {temp_file_path}")
+    
+    # Convertir a MP4 para el cliente
+    result = subprocess.run(['ffmpeg', '-i', temp_file_path, final_file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-        if result.returncode != 0:
-            print(f"Error al convertir a MP4: {result.stderr.decode()}")
-            raise Exception(f"Error al convertir el video: {result.stderr.decode()}")
+    if result.returncode != 0:
+        print(f"Error al convertir a MP4: {result.stderr.decode()}")
+        raise Exception(f"Error al convertir el video: {result.stderr.decode()}")
 
-        print(f"Video convertido a MP4: {output_mp4}")
-        
-        return output_mp4  # Retorna la ruta absoluta del archivo mp4
+    print(f"Video convertido a MP4: {final_file_path}")
+    
+    # Elimina el archivo temporal .webm
+    os.remove(temp_file_path)
+
+    return final_file_path  # Retorna la ruta absoluta del archivo MP4
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("No se proporcionó la URL.")
         sys.exit(1)
     url = sys.argv[1]  # Recibe la URL desde los argumentos
-    output_video_path = download_video(url)
-    print(output_video_path)  # Imprime la ruta para que Node.js la capture
+    try:
+        output_video_path = download_video(url)
+        print(output_video_path)  # Imprime la ruta para que Node.js la capture
+    except Exception as e:
+        print(f"Error: {e}")
