@@ -9,7 +9,7 @@ import ReactDOM from "react";
 
 import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
-import TrafficLight from "./Components/TrafficLight";
+
 
 import InstaFeed from "./Components/InstaFeed";
 import CurrencyChatBot from "./Components/CurrencyChatBot";
