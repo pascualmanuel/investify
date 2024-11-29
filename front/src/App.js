@@ -10,7 +10,6 @@ import ReactDOM from "react";
 import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
 
-
 import InstaFeed from "./Components/InstaFeed";
 import CurrencyChatBot from "./Components/CurrencyChatBot";
 import ChatBot from "./Components/ChatBot/Chatbot";
@@ -28,9 +27,9 @@ function App() {
     gsap.to(".scroll-element", {
       scrollTrigger: {
         trigger: ".scroll-element",
-        start: "top center", // Start the animation when the top of the element hits the center of the viewport
-        end: "bottom top", // End the animation when the bottom of the element hits the top of the viewport
-        scrub: true, // Smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
       },
       x: 100,
       opacity: 1,
