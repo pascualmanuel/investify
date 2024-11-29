@@ -6,7 +6,7 @@ import InvestmentList from "./Components/InvestmentList";
 import InvestmentChart from "./Components/InvestmentChart";
 import "./Styles/App.css";
 import ReactDOM from "react";
-import LimitedCounter from "./Components/LimitedCounter";
+
 import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
 import TrafficLight from "./Components/TrafficLight";
