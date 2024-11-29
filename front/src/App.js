@@ -7,7 +7,6 @@ import InvestmentChart from "./Components/InvestmentChart";
 import "./Styles/App.css";
 import ReactDOM from "react";
 
-import RandomImageGallery from "./Components/RandomImageGallery";
 import CurrencyConverter from "./Components/CurrencyConverter";
 
 import InstaFeed from "./Components/InstaFeed";
