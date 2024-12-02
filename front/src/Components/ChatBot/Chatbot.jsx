@@ -5,13 +5,22 @@ const Chatbot = () => {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
   const [isThinking, setIsThinking] = useState(false);
+  const [isFirstMessage, setIsFirstMessage] = useState(true); // Nuevo estado para identificar el primer mensaje
+
   const accessToken = process.env.REACT_APP_WITAI_SERVER_TOKEN;
+
   const greetResponses = [
     "Hola! ¿En qué puedo ayudarte hoy? 😊",
     "Buenas! ¿Te ayudo con alguna cotización de criptos? 💰",
     "Hey! Buscas el precio de tu crypto favorita",
     "Hola! Pregunta por cualquier moneda y te digo su valor actual. 🚀",
     "Hola! Decime en qué puedo ayudarte. 😄",
+  ];
+
+  const firstMsgWithCotization = [
+    "Buenas! El precio de {crypto} es ${price} USD. Si necesitas algo más, no dudes en avisarme!",
+    "Hola, gracias por usar chatbot! El precio de {crypto} es ${price} USD. ¿Algo más en lo que pueda ayudarte?",
+    "Hola! El precio actual de {crypto} es ${price} USD. Estoy aquí para cualquier otra duda. 😊",
   ];
 
   const farewellResponses = [
@@ -21,6 +30,7 @@ const Chatbot = () => {
     "Adiós, cuídate mucho! 😄",
     "Chau chau, hasta la próxima! 👋",
   ];
+
   const fetchCryptoPrice = async (cryptoSymbol) => {
     try {
       const response = await axios.get(
@@ -61,11 +71,9 @@ const Chatbot = () => {
         "mmm, no estoy seguro de lo que me preguntas. Podrías intentarlo de nuevo?";
 
       if (intent === "greet") {
-        // Escoge un saludo aleatorio del array greetResponses
         botResponse =
           greetResponses[Math.floor(Math.random() * greetResponses.length)];
       } else if (intent === "farewell") {
-        // Escoge una despedida aleatoria del array farewellResponses
         botResponse =
           farewellResponses[
             Math.floor(Math.random() * farewellResponses.length)
@@ -73,7 +81,16 @@ const Chatbot = () => {
       } else if (intent === "current_price" && cryptoEntity) {
         const price = await fetchCryptoPrice(cryptoEntity);
         if (price) {
-          botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD. `;
+          if (isFirstMessage) {
+            botResponse = firstMsgWithCotization[
+              Math.floor(Math.random() * firstMsgWithCotization.length)
+            ]
+              .replace("{crypto}", cryptoEntity)
+              .replace("{price}", price);
+            setIsFirstMessage(false);
+          } else {
+            botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD.`;
+          }
         } else {
           botResponse =
             "Lo siento, no pude obtener el precio en este momento. Intenta más tarde.";
