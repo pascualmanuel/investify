@@ -9,17 +9,17 @@ const Chatbot = () => {
   const greetResponses = [
     "Hola! ¿En qué puedo ayudarte hoy? 😊",
     "Buenas! ¿Te ayudo con alguna cotización de criptos? 💰",
-    "Hey! Buscas el precio de alguna criptcomoneda?",
+    "Hey! Buscas el precio de tu crypto favorita",
     "Hola! Pregunta por cualquier moneda y te digo su valor actual. 🚀",
     "Hola! Decime en qué puedo ayudarte. 😄",
   ];
 
   const farewellResponses = [
-    "¡Hasta luego! Que tengas un buen día. 👋",
+    "Hasta luego! Que tengas un buen día. 👋",
     "Chau! Si necesitas más ayuda, aquí estaré. 😊",
-    "¡Nos vemos! No dudes en volver si tienes más preguntas. 🚀",
+    "Nos vemos! No dudes en volver si tienes más preguntas. 🚀",
     "Adiós, cuídate mucho! 😄",
-    "Chau chau, ¡hasta la próxima! 👋",
+    "Chau chau, hasta la próxima! 👋",
   ];
   const fetchCryptoPrice = async (cryptoSymbol) => {
     try {
