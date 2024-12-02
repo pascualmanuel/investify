@@ -5,22 +5,15 @@ const Chatbot = () => {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
   const [isThinking, setIsThinking] = useState(false);
-  const [isFirstMessage, setIsFirstMessage] = useState(true); // Nuevo estado para identificar el primer mensaje
+  const [isFirstMessage, setIsFirstMessage] = useState(true); // Estado para identificar el primer mensaje
 
   const accessToken = process.env.REACT_APP_WITAI_SERVER_TOKEN;
-
   const greetResponses = [
     "Hola! ¿En qué puedo ayudarte hoy? 😊",
     "Buenas! ¿Te ayudo con alguna cotización de criptos? 💰",
     "Hey! Buscas el precio de tu crypto favorita",
-    "Hola! Pregunta por cualquier moneda y te digo su valor actual. 🚀",
     "Hola! Decime en qué puedo ayudarte. 😄",
-  ];
-
-  const firstMsgWithCotization = [
-    "Buenas! El precio de {crypto} es ${price} USD. Si necesitas algo más, no dudes en avisarme!",
-    "Hola, gracias por usar chatbot! El precio de {crypto} es ${price} USD. ¿Algo más en lo que pueda ayudarte?",
-    "Hola! El precio actual de {crypto} es ${price} USD. Estoy aquí para cualquier otra duda. 😊",
+    "Hola! Pregunta por cualquier moneda y te digo su valor actual. 🚀",
   ];
 
   const farewellResponses = [
@@ -39,6 +32,28 @@ const Chatbot = () => {
       return response.data.USD;
     } catch (error) {
       console.error("Error al obtener el precio de la criptomoneda:", error);
+      return null;
+    }
+  };
+
+  const fetchDollarPrice = async (type) => {
+    try {
+      const response = await axios.get(
+        "https://api.bluelytics.com.ar/v2/latest"
+      );
+      if (type === "blue") {
+        return {
+          buy: response.data.blue.value_buy,
+          sell: response.data.blue.value_sell,
+        };
+      } else {
+        return {
+          buy: response.data.oficial.value_buy,
+          sell: response.data.oficial.value_sell,
+        };
+      }
+    } catch (error) {
+      console.error("Error al obtener el precio del dólar:", error);
       return null;
     }
   };
@@ -79,21 +94,55 @@ const Chatbot = () => {
             Math.floor(Math.random() * farewellResponses.length)
           ];
       } else if (intent === "current_price" && cryptoEntity) {
-        const price = await fetchCryptoPrice(cryptoEntity);
-        if (price) {
-          if (isFirstMessage) {
-            botResponse = firstMsgWithCotization[
-              Math.floor(Math.random() * firstMsgWithCotization.length)
-            ]
-              .replace("{crypto}", cryptoEntity)
-              .replace("{price}", price);
-            setIsFirstMessage(false);
-          } else {
-            botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD.`;
-          }
+        if (cryptoEntity.toUpperCase() === "USD") {
+          // Si es USD, pregunta por el tipo de dólar
+          botResponse = (
+            <>
+              ¿Deseas el valor del dólar{" "}
+              <span
+                onClick={() => handleDollarChoice("oficial")}
+                style={{
+                  color: "blue",
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                }}
+              >
+                oficial
+              </span>{" "}
+              o el{" "}
+              <span
+                onClick={() => handleDollarChoice("blue")}
+                style={{
+                  color: "blue",
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                }}
+              >
+                dólar blue
+              </span>
+              ?
+            </>
+          );
+          setMessages((prev) => [
+            ...prev,
+            { sender: "bot", text: botResponse },
+          ]);
+          setIsThinking(false);
+          return;
         } else {
-          botResponse =
-            "Lo siento, no pude obtener el precio en este momento. Intenta más tarde.";
+          const price = await fetchCryptoPrice(cryptoEntity);
+          if (price) {
+            // Agregar lógica para el primer mensaje con cotización
+            if (isFirstMessage) {
+              botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD. ¿Te gustaría saber el precio de alguna otra moneda?`;
+              setIsFirstMessage(false); // Marcar que ya se respondió el primer mensaje
+            } else {
+              botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD.`;
+            }
+          } else {
+            botResponse =
+              "Lo siento, no pude obtener el precio en este momento. Intenta más tarde.";
+          }
         }
       }
 
@@ -109,6 +158,20 @@ const Chatbot = () => {
       ]);
       setIsThinking(false);
     }
+  };
+
+  const handleDollarChoice = async (choice) => {
+    const prices = await fetchDollarPrice(choice);
+    let botResponse = "";
+    if (prices) {
+      botResponse = `El valor del dólar ${
+        choice === "blue" ? "blue" : "oficial"
+      } es de $${prices.buy} para la compra y $${prices.sell} para la venta.`;
+    } else {
+      botResponse =
+        "Hubo un error al obtener el valor del dólar. Intenta más tarde.";
+    }
+    setMessages((prev) => [...prev, { sender: "bot", text: botResponse }]);
   };
 
   const handleKeyPress = (e) => {
@@ -147,6 +210,24 @@ const Chatbot = () => {
           Enviar
         </button>
       </div>
+
+      {/* Mensaje con los enlaces clickeables */}
+      {/* {messages.some((msg) => msg.text.includes("dólar")) && !isThinking && (
+        <div className="dollar-options">
+          <span
+            onClick={() => handleDollarChoice("blue")}
+            style={{ color: "blue", cursor: "pointer", marginRight: "10px" }}
+          >
+            Dólar Blue
+          </span>
+          <span
+            onClick={() => handleDollarChoice("oficial")}
+            style={{ color: "green", cursor: "pointer" }}
+          >
+            Dólar Oficial
+          </span>
+        </div>
+      )} */}
     </div>
   );
 };
