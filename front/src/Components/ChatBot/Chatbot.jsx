@@ -144,7 +144,19 @@ const Chatbot = () => {
       console.log("Respuesta de Wit.ai:", data);
 
       const intent = data.intents[0]?.name;
-      const cryptoEntity = data.entities["crypto:crypto"]?.[0]?.value;
+      const cryptoEntities =
+        data.entities["crypto:crypto"]?.map((entity) =>
+          entity.value.toUpperCase()
+        ) || [];
+
+      // Filtrar "USD" si hay otras criptos presentes
+      const filteredCryptoEntities =
+        cryptoEntities.length > 1
+          ? cryptoEntities.filter((entity) => entity !== "USD")
+          : cryptoEntities;
+
+      // Seleccionar la crypto final (si corresponde)
+      const cryptoEntity = filteredCryptoEntities[0] || null;
 
       console.log(cryptoEntity);
 
@@ -160,7 +172,8 @@ const Chatbot = () => {
             Math.floor(Math.random() * farewellResponses.length)
           ];
       } else if (intent === "current_price" && cryptoEntity) {
-        if (cryptoEntity.toUpperCase() === "USD") {
+        // if (cryptoEntity.toUpperCase() === "USD") {
+        if (cryptoEntity.toUpperCase() === "USD" && cryptoEntity.length === 1) {
           // Si es USD, pregunta por el tipo de dólar
           botResponse = (
             <>
