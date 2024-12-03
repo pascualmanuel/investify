@@ -200,7 +200,7 @@ const Chatbot = () => {
           if (price) {
             // Agregar lógica para el primer mensaje con cotización
             if (isFirstMessage) {
-              botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD. Te gustaría saber el precio de alguna otra moneda?`;
+              botResponse = `Buenas 👋🏼! El precio actual de ${cryptoEntity} es de $${price} USD. Te gustaría saber el precio de alguna otra moneda, o el valor de ${cryptoEntity} alguna fecha especifica?`;
               setIsFirstMessage(false); // Marcar que ya se respondió el primer mensaje
             } else {
               botResponse = `El precio actual de ${cryptoEntity} es de $${price} USD.`;
@@ -212,6 +212,7 @@ const Chatbot = () => {
         }
       } else if (intent === "historical_price") {
         const dateEntity = data.entities["wit$datetime:datetime"]?.[0]?.value;
+        console.log(dateEntity);
         const cryptoEntity =
           data.entities["crypto:crypto"]?.[0]?.value?.toLowerCase(); // Normalizamos el valor a minúsculas.
 
