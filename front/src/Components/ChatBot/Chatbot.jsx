@@ -5,7 +5,7 @@ const Chatbot = () => {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([]);
   const [isThinking, setIsThinking] = useState(false);
-  const [isFirstMessage, setIsFirstMessage] = useState(true); // Estado para identificar el primer mensaje
+  const [isFirstMessage, setIsFirstMessage] = useState(true);
 
   const accessToken = process.env.REACT_APP_WITAI_SERVER_TOKEN;
   const greetResponses = [
