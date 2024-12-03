@@ -280,7 +280,7 @@ const Chatbot = () => {
 
   return (
     <div className="chat-container">
-      <h2>Crypto hoy</h2>
+      <h2>Crypto y dólar hoy</h2>
       <div className="chat-box">
         {messages.map((msg, index) => (
           <div
