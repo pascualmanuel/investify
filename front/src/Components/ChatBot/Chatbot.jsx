@@ -73,27 +73,6 @@ const Chatbot = () => {
     }
   };
 
-  // const fetchHistoricalDollarPrice = async (date) => {
-  //   console.log("fetchHistoricalDollarPrice", date);
-  //   try {
-  //     const response = await axios.get(
-  //       `https://api.bluelytics.com.ar/v2/historical?day=${date}`
-  //     );
-  //     if (response.data.length > 0) {
-  //       console.log(response);
-  //       return {
-  //         buy: response.data[0].value_buy,
-  //         sell: response.data[0].value_sell,
-  //       };
-  //     } else {
-  //       return null;
-  //     }
-  //   } catch (error) {
-  //     console.error("Error al obtener el precio histórico del dólar:", error);
-  //     return null;
-  //   }
-  // };
-
   const fetchHistoricalDollarPrice = async (date) => {
     console.log("fetchHistoricalDollarPrice", date);
     try {
