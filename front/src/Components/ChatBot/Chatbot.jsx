@@ -134,10 +134,13 @@ const Chatbot = () => {
           ? cryptoEntities.filter((entity) => entity !== "USD")
           : cryptoEntities;
 
-      // Seleccionar la crypto final (si corresponde)
       const cryptoEntity = filteredCryptoEntities[0] || null;
+      console.log(intent, "intent");
+      console.log(filteredCryptoEntities, "filteredCryptoEntities");
+      // Seleccionar la crypto final (si corresponde)
 
-      console.log(cryptoEntity);
+      console.log(cryptoEntity.length, "cryptoEntity.length");
+      console.log(cryptoEntity, "cryptoentity");
 
       let botResponse =
         "mmm, no estoy seguro de lo que me preguntas. Podrías intentarlo de nuevo?";
@@ -152,7 +155,7 @@ const Chatbot = () => {
           ];
       } else if (intent === "current_price" && cryptoEntity) {
         // if (cryptoEntity.toUpperCase() === "USD") {
-        if (cryptoEntity.toUpperCase() === "USD" && cryptoEntity.length === 1) {
+        if (cryptoEntity.toUpperCase() === "USD") {
           // Si es USD, pregunta por el tipo de dólar
           botResponse = (
             <>
