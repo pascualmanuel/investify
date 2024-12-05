@@ -237,6 +237,9 @@ const Chatbot = () => {
               "No reconocí la moneda o criptomoneda que mencionaste. Por favor, intenta de nuevo.";
           }
         }
+      } else if (intent === "value_comp") {
+        botResponse =
+          "Vos queres hacer comparaciones de finanzas??? a eso vamos reyyyyy🚀🚀";
       }
 
       setTimeout(() => {
