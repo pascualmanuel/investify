@@ -135,12 +135,6 @@ const Chatbot = () => {
           : cryptoEntities;
 
       const cryptoEntity = filteredCryptoEntities[0] || null;
-      console.log(intent, "intent");
-      console.log(filteredCryptoEntities, "filteredCryptoEntities");
-      // Seleccionar la crypto final (si corresponde)
-
-      console.log(cryptoEntity.length, "cryptoEntity.length");
-      console.log(cryptoEntity, "cryptoentity");
 
       let botResponse =
         "mmm, no estoy seguro de lo que me preguntas. Podrías intentarlo de nuevo?";
@@ -207,7 +201,7 @@ const Chatbot = () => {
         }
       } else if (intent === "historical_price") {
         const dateEntity = data.entities["wit$datetime:datetime"]?.[0]?.value;
-        console.log(dateEntity);
+
         const cryptoEntity =
           data.entities["crypto:crypto"]?.[0]?.value?.toLowerCase(); // Normalizamos el valor a minúsculas.
 
@@ -221,7 +215,6 @@ const Chatbot = () => {
           const timestamp = Math.floor(new Date(dateEntity).getTime() / 1000);
 
           if (cryptoEntity === "usd" || cryptoEntity === "USD") {
-            console.log("cryptoEntity dólar");
             // Caso específico para "dólar".
             const price = await fetchHistoricalDollarPrice(formattedDate);
             console.log(price);
