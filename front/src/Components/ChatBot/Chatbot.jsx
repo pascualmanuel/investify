@@ -280,8 +280,6 @@ const Chatbot = () => {
                   maximumFractionDigits: 2,
                 });
 
-                
-
                 botResponse = `Si hubieras invertido $${investmentAmount} USD en ${cryptoEntity} el ${formattedDate}, ahora tendrías aproximadamente $${formattedResult} USD. 🚀`;
               }
             }
