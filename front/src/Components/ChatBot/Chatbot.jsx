@@ -153,7 +153,7 @@ const Chatbot = () => {
           // Si es USD, pregunta por el tipo de dólar
           botResponse = (
             <>
-              Deseas el valor del dólar{" "}
+              Deseas el valor del dólar
               <span
                 onClick={() => handleDollarChoice("oficial")}
                 style={{
@@ -238,8 +238,59 @@ const Chatbot = () => {
           }
         }
       } else if (intent === "value_comp") {
-        botResponse =
-          "Vos queres hacer comparaciones de finanzas??? a eso vamos reyyyyy🚀🚀";
+        const investmentAmount = inputText.match(/\d+/)?.[0]; // Buscar el número en el texto
+        const cryptoEntity =
+          data.entities["crypto:crypto"]?.[0]?.value?.toLowerCase();
+
+        // Buscar la fecha más antigua en wit$datetime:datetime
+        const dateEntities = data.entities["wit$datetime:datetime"];
+        const oldestDate = dateEntities
+          ?.map((entity) => new Date(entity.value)) // Convertir a objetos Date
+          .filter((date) => date.getFullYear() >= 1900) // Ignorar años menores a 1900
+          .sort((a, b) => a - b)[0]; // Ordenar y obtener la fecha más antigua
+
+        if (!investmentAmount || !cryptoEntity || !oldestDate) {
+          botResponse =
+            "No entendí todos los datos necesarios para calcular. Necesito el monto, la criptomoneda y la fecha.";
+        } else {
+          const formattedDate = oldestDate.toISOString().split("T")[0];
+          const timestamp = Math.floor(oldestDate.getTime() / 1000);
+
+          try {
+            // Obtener el precio histórico
+            const historicalPrice = await fetchHistoricalCryptoPrice(
+              cryptoEntity,
+              timestamp
+            );
+
+            if (!historicalPrice) {
+              botResponse = `Lo siento, no pude obtener el precio histórico de ${cryptoEntity} para la fecha ${formattedDate}.`;
+            } else {
+              // Obtener el precio actual
+              const currentPrice = await fetchCryptoPrice(cryptoEntity);
+              if (!currentPrice) {
+                botResponse = `No pude obtener el precio actual de ${cryptoEntity}. Intenta más tarde.`;
+              } else {
+                // Calcular el rendimiento
+                const result =
+                  (investmentAmount * currentPrice) / historicalPrice;
+
+                const formattedResult = result.toLocaleString("en-US", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                });
+
+                
+
+                botResponse = `Si hubieras invertido $${investmentAmount} USD en ${cryptoEntity} el ${formattedDate}, ahora tendrías aproximadamente $${formattedResult} USD. 🚀`;
+              }
+            }
+          } catch (error) {
+            botResponse =
+              "Ocurrió un error al procesar tu solicitud. Por favor, inténtalo más tarde.";
+            console.error(error);
+          }
+        }
       }
 
       setTimeout(() => {
