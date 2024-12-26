@@ -246,7 +246,7 @@ const Chatbot = () => {
         const dateEntities = data.entities["wit$datetime:datetime"];
         const oldestDate = dateEntities
           ?.map((entity) => new Date(entity.value)) // Convertir a objetos Date
-          .filter((date) => date.getFullYear() >= 1900) // Ignorar años menores a 1900
+          .filter((date) => date.getFullYear() >= 2011) // Ignorar años menores a 1900
           .sort((a, b) => a - b)[0]; // Ordenar y obtener la fecha más antigua
 
         if (!investmentAmount || !cryptoEntity || !oldestDate) {
