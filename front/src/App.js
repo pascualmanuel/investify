@@ -40,9 +40,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/friends" element={<Friends />} />{" "}
           <Route path="/friends" element={<Friends />} />
+          <Route path="/scroll" element={<SmoothScroll />} />{" "}
           <Route path="/scroll" element={<SmoothScroll />} />
+          <Route path="/chatbot" element={<ChatBot />} />{" "}
           <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/instafeed" element={<InstaFeed />} />{" "}
           <Route path="/instafeed" element={<InstaFeed />} />
           <Route path="/youtube" element={<YoutubeDownloader />} />
         </Routes>
