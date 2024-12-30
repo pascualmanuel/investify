@@ -67,3 +67,54 @@ svg {
 }
 
 
+
+.header-products-cont {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.title-products-header {
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #313131;
+}
+
+.products-header:hover .title-products-header {
+  color: #3c5ea9;
+  text-underline-offset: 5px;
+  text-decoration: underline;
+}
+.title-products-header:hover {
+  color: #3c5ea9;
+}
+
+.btn-search {
+  background-color: #3c5ea9;
+  width: 33px;
+  height: 33px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-cont {
+  display: flex;
+  border: solid #dadada;
+  padding: 4px;
+  width: 222px;
+  height: 44px;
+}
+
+.probando {
+  position: absolute;
+  /* margin-top: 50px; */
+  background-color: white;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(2px);
+}
+
