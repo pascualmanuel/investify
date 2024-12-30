@@ -118,3 +118,62 @@ svg {
   backdrop-filter: blur(2px);
 }
 
+.search-product {
+  width: 222px;
+  height: 40px;
+  border-bottom: 0.5px solid #dcdcdc;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.search-product:hover {
+  /* background-color: rgba(128, 128, 128, 0.185); */
+  background: #eff4ff;
+}
+
+.p-search {
+  color: #313131;
+}
+.p-search:hover {
+  color: #3c5ea9;
+}
+
+input {
+  background: white;
+  outline: none;
+  border: none;
+  color: black;
+  font-size: 2.4rem;
+}
+
+@media (max-width: 1435px) {
+  .alert-inner {
+    padding-right: 0px;
+  }
+}
+
+.header-title {
+  cursor: pointer;
+  color: #3c5ea9;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.footer-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 100px;
+  max-width: 1240px;
+  min-width: 1000px;
+}
+.ul-footer {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #313131;
+  list-style: none;
+}
+
+
