@@ -165,3 +165,129 @@ p {
     src: url("./assets/fonts/FellixTRIALVF-Uprights.woff2") format("woff2");
     font-style: normal;
   }
+
+
+    
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .links {
+    position: relative;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+  }
+  
+  .links:hover {
+    color: #161c2d;
+    transition: 0.5s ease; /* TransiciÃ³n suave */
+  }
+  
+  .links::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Ajusta el grosor de la lÃ­nea */
+    background-color: #161c2d; /* Color de la lÃ­nea al hacer hover */
+    transform: scaleX(0); /* Inicia con la lÃ­nea invisible */
+    transform-origin: left; /* Cambia el origen de la transformaciÃ³n a la izquierda */
+    transition: transform 0.5s ease; /* TransiciÃ³n suave */
+    margin-bottom: -6px;
+  }
+  
+  .links:hover::after {
+    transform: scaleX(1); /* Muestra la lÃ­nea al hacer hover */
+  
+    margin-bottom: -6px;
+  }
+  
+  .active-link-class {
+    color: #161c2d;
+  }
+  .myH1 {
+    /* H1 Desktop */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -2px;
+  }
+  
+  .myH2 {
+    /* H2 Desktop */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 52px;
+    letter-spacing: -1.2px;
+  }
+  
+  .subH {
+    /* SubHeading - Desktop */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+  
+  .labels {
+    /* Labels */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1px;
+  }
+  .myP {
+    /* Body 1 - Regular */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+  
+  .myP2 {
+    /* Body 2 - Regular */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .myP3 {
+    /* Body 3 - Regular */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 121.4%;
+  }
+  
+  .myPBold {
+    /* Body 1 - Semibold */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.2px;
+  }
+  
+  .myPBold2 {
+    /* Body 2 - Semibold */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 121.4%;
+  }
+  
