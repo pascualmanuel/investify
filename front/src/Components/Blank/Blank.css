@@ -41,3 +41,127 @@ p {
   line-height: 24px;
   letter-spacing: -0.2px;
 }
+
+@font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Black.woff2") format("woff2");
+    font-weight: 900; /* Black */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-BlackItalic.woff2") format("woff2");
+    font-weight: 900; /* Black */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Bold.woff2") format("woff2");
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-BoldItalic.woff2") format("woff2");
+    font-weight: 700; /* Bold */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-ExtraBold.woff2") format("woff2");
+    font-weight: 800; /* Extra Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-ExtraBoldItalic.woff2") format("woff2");
+    font-weight: 800; /* Extra Bold */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Light.woff2") format("woff2");
+    font-weight: 300; /* Light */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-LightItalic.woff2") format("woff2");
+    font-weight: 300; /* Light */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Medium.woff2") format("woff2");
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-MediumItalic.woff2") format("woff2");
+    font-weight: 500; /* Medium */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Regular.woff2") format("woff2");
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-RegularItalic.woff2") format("woff2");
+    font-weight: 400; /* Regular */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-SemiBold.woff2") format("woff2");
+    font-weight: 600; /* Semi Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-SemiBoldItalic.woff2") format("woff2");
+    font-weight: 600; /* Semi Bold */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Thin.woff2") format("woff2");
+    font-weight: 100; /* Thin */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-ThinItalic.woff2") format("woff2");
+    font-weight: 100; /* Thin */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix Italics";
+    src: url("./assets/fonts/FellixTRIALVF-Italics.woff2") format("woff2");
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix Uprights";
+    src: url("./assets/fonts/FellixTRIALVF-Uprights.woff2") format("woff2");
+    font-style: normal;
+  }
