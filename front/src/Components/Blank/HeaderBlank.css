@@ -111,7 +111,7 @@ svg {
 
 .probando {
   position: absolute;
-  /* margin-top: 50px; */
+
   background-color: white;
   z-index: 100;
   background: rgba(255, 255, 255, 0.9);
@@ -126,7 +126,7 @@ svg {
   padding-left: 10px;
 }
 .search-product:hover {
-  /* background-color: rgba(128, 128, 128, 0.185); */
+
   background: #eff4ff;
 }
 
@@ -194,12 +194,7 @@ input {
   .right-nav-cont {
     display: none;
   }
-  .hamburger-react {
-    /* width: 20px !important; */
-    /* cursor: pointer !important; */
-    /* display: flex !important; */
-    /* align-items: center !important; */
-  }
+
 }
 
 @media (min-width: 515px) {
@@ -325,9 +320,7 @@ ul {
   .title-redes {
     display: none;
   }
-  /* .li-redes {
-    margin-right: 40px;
-  } */
+
 }
 
 .logo-footer {
