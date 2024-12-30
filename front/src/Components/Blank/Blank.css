@@ -352,3 +352,46 @@ p {
       background-position: 0% 11%;
     }
   }
+
+
+
+  @media (max-width: 767px) {
+    .no-hover {
+      transform: none !important;
+    }
+    .myH1 {
+      /* H1 Mobile */
+      font-size: 40px;
+      line-height: 45px;
+      letter-spacing: -1px;
+    }
+  
+    .myH2 {
+      /* H2 Mobile */
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 38px;
+      letter-spacing: -1.2px;
+    }
+    .subH {
+      /* SubHeading - Mobile */
+      font-size: 16px;
+      line-height: 23px;
+    }
+  
+    .lines-hero {
+      margin-top: -50px;
+    }
+  }
+  
+  .ecg-line {
+    stroke-dasharray: 400; /* Esto define la longitud del trazo */
+    stroke-dashoffset: 400; /* Oculta toda la lÃ­nea al principio */
+    animation: draw 2s linear infinite; /* AnimaciÃ³n infinita */
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 10; /* Dibuja la lÃ­nea */
+    }
+  }
