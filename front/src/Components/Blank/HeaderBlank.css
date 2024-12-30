@@ -224,3 +224,39 @@ input {
 
 
 
+.pruebaa {
+  background-image: url("../Assets/hero-cont.png");
+  height: 100vh;
+}
+
+.li-header-mob {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 38px;
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.search-mob {
+  margin-bottom: 30px;
+  border: none;
+  background-color: white;
+  padding: 4px;
+  display: flex;
+}
+ul {
+  padding-inline-start: 0px !important;
+}
+
+.btn-search-mob {
+  background-color: #3c5ea9;
+  width: 33px;
+  height: 33px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
