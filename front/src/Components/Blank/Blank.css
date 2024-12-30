@@ -291,3 +291,64 @@ p {
     line-height: 121.4%;
   }
   
+
+
+  .myCTA {
+    /* CTA'S */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.1px;
+  }
+  
+  .lines-hero {
+    margin-top: -200px;
+  }
+  
+  /* .bg-gradient {
+    background: linear-gradient(123.19deg, #161c2d 9.14%, #021e5f 139.89%);
+  } */
+  .bg-gradient {
+    background: linear-gradient(307deg, #161c2d, #021e5f, #161c2d, #021e5f);
+    background-size: 800% 800%;
+  
+    -webkit-animation: gradientInveniet 59s ease infinite;
+    -moz-animation: gradientInveniet 59s ease infinite;
+    animation: gradientInveniet 59s ease infinite;
+  }
+  
+  @-webkit-keyframes gradientInveniet {
+    0% {
+      background-position: 0% 11%;
+    }
+    50% {
+      background-position: 100% 90%;
+    }
+    100% {
+      background-position: 0% 11%;
+    }
+  }
+  @-moz-keyframes gradientInveniet {
+    0% {
+      background-position: 0% 11%;
+    }
+    50% {
+      background-position: 100% 90%;
+    }
+    100% {
+      background-position: 0% 11%;
+    }
+  }
+  @keyframes gradientInveniet {
+    0% {
+      background-position: 0% 11%;
+    }
+    50% {
+      background-position: 100% 90%;
+    }
+    100% {
+      background-position: 0% 11%;
+    }
+  }
