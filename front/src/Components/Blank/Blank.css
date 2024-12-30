@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.max-width {
+  max-width: 1240px;
+}
+
+@media (max-width: 767px) {
+  .max-width {
+    max-width: 550px;
+  }
+}
+.center {
+  margin: 0 auto; /* Centers the element horizontally */
+  padding: 0 1.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Fellix", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #161c2d;
+  overflow-x: hidden !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-family: "Fellix", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
