@@ -291,3 +291,88 @@
   font-weight: 200;
   color: #313131;
 }
+
+.sq {
+  width: 220px;
+  height: 165px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.one {
+  border-bottom: 1px #dadada solid;
+  border-right: 1px #dadada solid;
+}
+.two {
+  border-bottom: 1px #dadada solid;
+}
+.three {
+  border-right: 1px #dadada solid;
+}
+.square {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  margin-left: -60px;
+  min-width: 440px;
+}
+.daewoo-stats {
+  font-size: 60px;
+  font-weight: 900;
+
+  text-align: left;
+  background: linear-gradient(99.82deg, #41b2d2 4.25%, #f0047f 84.76%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.daewoo-stats-1 {
+  font-size: 60px;
+  font-weight: 900;
+  background: linear-gradient(99.53deg, #41b2d2 37.52%, #f0047f 62.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.daewoo-stats-2 {
+  font-size: 60px;
+  font-weight: 900;
+  background: linear-gradient(98deg, #41b2d2 51.09%, #f0047f 125.54%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.daewoo-stats-3 {
+  font-size: 60px;
+  font-weight: 900;
+
+  background: linear-gradient(97.6deg, #41b2d2 34.73%, #f0047f 86.05%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.daewoo-stats-4 {
+  font-size: 60px;
+  font-weight: 900;
+  background: linear-gradient(99.31deg, #41b2d2 16.28%, #f0047f 57.04%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.daewoo-stats-sub {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #313131;
+}
+.sq-aux {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
