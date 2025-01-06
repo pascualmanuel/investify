@@ -440,3 +440,49 @@ img.crock {
     /* background-size: contain; */
   }
 }
+@media (min-width: 1377px) {
+  .br-1376 {
+    display: none;
+  }
+}
+@media (max-width: 515px) {
+  .carousel-item {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+  .hero1 {
+    height: 50vh !important;
+    background-image: url("../../Assets/hero01.jpg");
+    background-position: center;
+  }
+  .hero2 {
+    height: 50vh !important;
+    background-position: center;
+  }
+  .hero3 {
+    height: 50vh !important;
+    background-position: center;
+  }
+  .carousel-caption {
+    height: auto !important;
+    position: relative !important;
+  }
+  .banner {
+    margin-bottom: 0px;
+    margin-left: 0px;
+    height: 313px;
+    background-image: url("../../Assets/banner-back-mob.jpg");
+    background-size: contain;
+  }
+  .banner-title {
+    font-size: 34px;
+    padding-top: 70px;
+    margin-left: 105px;
+    line-height: 44px;
+  }
+  .banner-subtitle {
+    font-size: 16px;
+    margin-left: 105px;
+  }
+}
+
