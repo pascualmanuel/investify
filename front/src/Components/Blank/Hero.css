@@ -230,3 +230,64 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.daewoo-banner-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  padding-top: 100px;
+}
+
+.daewoo-banner-title {
+  font-size: 45px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(
+    93.76deg,
+    #0b489d 8.48%,
+    #072f66 26.13%,
+    #0b489d 47.76%,
+    #072f66 68.73%,
+    #0b489d 97.32%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.daewoo-banner-p {
+  font-size: 14px;
+  line-height: 138%;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #313131;
+  font-weight: 700;
+}
+.daewoo-banner-title-mob {
+  font-size: 45px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(
+    93.76deg,
+    #0b489d 8.48%,
+    #072f66 26.13%,
+    #0b489d 47.76%,
+    #072f66 68.73%,
+    #0b489d 97.32%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.daewoo-banner-p-mob {
+  font-size: 14px;
+  line-height: 138%;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #313131;
+  font-weight: 700;
+}
+.light {
+  font-weight: 200;
+  color: #313131;
+}
