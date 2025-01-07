@@ -803,3 +803,17 @@ img.crock {
   background-size: cover;
 }
 
+@media (min-width: 515px) {
+  .br-500 {
+    display: none;
+  }
+  .micro-banner-cont-hpt-mob {
+    display: none;
+  }
+  .daewoo-banner-title-mob {
+    display: none;
+  }
+  .daewoo-banner-p-mob {
+    display: none;
+  }
+}
