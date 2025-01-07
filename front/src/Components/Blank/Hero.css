@@ -609,3 +609,94 @@ img.crock {
   }
 }
 
+/* MOBILE! */
+
+@media (max-width: 515px) {
+  .home-hero-cont {
+    min-width: min-content;
+  }
+  .home-cont-categories {
+    margin-left: 35px;
+    margin-right: 35px;
+    min-width: min-content;
+    align-items: center;
+  }
+  .box-cont-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .box-category {
+    margin-top: 28px;
+  }
+
+  .box-category {
+    width: 276px;
+    height: 300px;
+  }
+  .category-img {
+    width: 145px;
+  }
+
+  .freezer-banner-cont {
+    display: flex;
+    flex-direction: column;
+    min-width: min-content;
+    height: 650px;
+  }
+  .micro-banner-cont {
+    display: flex;
+    flex-direction: column;
+    min-width: min-content;
+    height: 650px;
+  }
+  .micro-banner-left {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50%;
+    height: 40%;
+  }
+  .micro-banner-right {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px;
+    padding-left: 0px;
+  }
+  .micro-banner-sub {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #313131;
+    padding-top: 30px;
+    padding-bottom: 20px !important;
+  }
+  .micro-banner-title {
+    font-size: 30px;
+    line-height: 36px;
+    padding-bottom: 20px !important;
+    text-align: center;
+  }
+  .br-micro {
+    display: block;
+  }
+  .micro-banner-p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #313131;
+    margin-bottom: 8px !important;
+  }
+  .cta-banner-cont {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    margin-bottom: 25px;
+  }
+}
