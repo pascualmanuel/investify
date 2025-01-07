@@ -699,4 +699,66 @@ img.crock {
 
     margin-bottom: 25px;
   }
+  .cta-tienda {
+    padding: 12px 76px;
+  }
+  .cta-banner {
+    margin-left: 0px;
+  }
+  .br-banner-micro {
+    display: none;
+  }
+  .micro-banner-cont-hpt {
+    display: none;
+  }
+  .pre-footer {
+    background: transparent;
+    width: 100vw;
+    min-width: min-content;
+    margin: 0;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pre-footer-back {
+    background: linear-gradient(114.23deg, #41b2d2 5.38%, #f0047f 105.06%);
+    width: 100vw;
+    min-width: min-content;
+    margin: 0;
+    width: 100vw;
+    min-width: min-content;
+    margin: 0;
+    height: 450px;
+  }
+
+  .daewoo-banner-cont {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    min-width: min-content;
+  }
+
+  .daewoo-banner-right {
+    background-image: url("../../Assets/daewoo-banner-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 85vw;
+  }
+  .daewoo-banner-title-mob {
+    font-size: 9vw;
+  }
+  .daewoo-banner-p-mob {
+    font-size: 3.5vw;
+    padding-bottom: 65px;
+  }
+
+  .daewoo-banner-left {
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    max-width: 200px;
+  }
 }
