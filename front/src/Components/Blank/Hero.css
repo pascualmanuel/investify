@@ -761,4 +761,45 @@ img.crock {
     margin-left: 30px;
     max-width: 200px;
   }
+  .square {
+    margin: 0px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    min-width: auto;
+  }
+  .sq {
+    border: none;
+    border-bottom: 1px #dadada solid;
+  }
+  .four {
+    border: none;
+  }
+  .daewoo-banner-title {
+    display: none;
+  }
+  .daewoo-banner-p {
+    display: none;
+  }
+  img.crock {
+    width: 225px;
+  }
+  .br-1376 {
+    display: none;
+  }
 }
+
+.micro-banner-cont-hpt-mob {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 480px;
+  margin-left: 30px;
+  margin-right: 30px;
+  min-width: min-content;
+  background-image: url("../../Assets/banner-inspiracional-hpti-mob.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
