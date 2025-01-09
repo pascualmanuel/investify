@@ -17,6 +17,16 @@ import SecondCarousel from "../../Assets/products/lavadoras/carousel-lavadora-3.
 import ThirdCarousel from "../../Assets/products/lavadoras/carousel-lavadora-2.jpg";
 
 function Lavadoras() {
+  let viewportWidth = window.innerWidth;
+  console.log(viewportWidth);
+
+  let HeroLavadoras;
+
+  if (viewportWidth < 600) {
+    HeroLavadoras = HeroLavadorasMobile;
+  } else {
+    HeroLavadoras = HeroLavadorasDesktop;
+  }
 
   return (
     <>
@@ -57,7 +67,77 @@ function Lavadoras() {
         </div>
       </div>
       {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
-      
+      {viewportWidth > 600 ? (
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod">
+              Lavadoras y secadoras de alta tecnología.
+            </h3>
+            <div className="product-hero">
+              <Carousel
+                slide
+                controls={true}
+                indicators={true}
+                pause={false}
+                interval={3000}
+              >
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${FirstCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${SecondCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${ThirdCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod-mob">
+              Lavadoras y secadoras <br></br> de alta tecnología.
+            </h3>
+          </div>
+          <Carousel
+            fade
+            controls={false}
+            indicators={true}
+            pause={false}
+            interval={3000}
+          >
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob1})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob2})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob3})` }}
+              ></div>
+            </Carousel.Item>
+          </Carousel>
+        </>
+      )}
     </>
   );
 }
