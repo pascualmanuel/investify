@@ -72,7 +72,28 @@ function Freezers() {
             </a>
           </div>
 
-         
+          <div className="product-box-category bla">
+            <img
+              src={ProductFreezer3}
+              className="product-category-img"
+              width={180}
+              alt="category-img"
+            />
+            <p className="product-name">Freezer Horizontal 199 Lts</p>
+            <p className="product-subtitle">
+              Congela o refrigera tus alimentos con el <br></br> menor consumo
+              de energía posible.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
         </div>
       </div>
       {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
