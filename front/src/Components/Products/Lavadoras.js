@@ -1,6 +1,20 @@
 import React from "react";
 import "./Product.css";
 import Carousel from "react-bootstrap/Carousel";
+import HeroLavadorasDesktop from "../../Assets/products/lavadoras/hero-lavadora.jpg";
+import HeroLavadorasMobile from "../../Assets/products/lavadoras/hero-lavadora-2.jpg";
+import ProductLavadora from "../../Assets/products/lavadoras/Productos/lavdora-14kg-1.webp";
+import ProductLavadora2 from "../../Assets/products/lavadoras/Productos/lavdora-17kg.webp";
+import ProductLavadora3 from "../../Assets/products/lavadoras/Productos/lavdora-8kg.webp";
+import ProductLavadora4 from "../../Assets/products/lavadoras/Productos/lavadora-secadora.webp";
+import ProductLavadora5 from "../../Assets/products/lavadoras/Productos/secadora-7kg3.webp";
+
+import EmocionalMob1 from "../../Assets/products/lavadoras/carousel-mob-lavadora-1.jpg";
+import EmocionalMob2 from "../../Assets/products/lavadoras/carousel-mob-lavadora-2.jpg";
+import EmocionalMob3 from "../../Assets/products/lavadoras/carousel-mob-lavadora-3.jpg";
+import FirstCarousel from "../../Assets/products/lavadoras/carousel-lavadora-1.jpg";
+import SecondCarousel from "../../Assets/products/lavadoras/carousel-lavadora-3.jpg";
+import ThirdCarousel from "../../Assets/products/lavadoras/carousel-lavadora-2.jpg";
 
 function Lavadoras() {
 
