@@ -118,6 +118,7 @@ function Freezers() {
         </div>
       </div>
       {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
+      {viewportWidth > 600 ? (
         <>
           <div className="product-cont-categories">
             <h3 className="i-text-prod">
@@ -147,7 +148,35 @@ function Freezers() {
             </div>
           </div>
         </>
-     
+      ) : (
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod-mob">
+              Más que un freezer, una <br></br> experiencia
+            </h3>
+          </div>
+          <Carousel
+            fade
+            controls={false}
+            indicators={true}
+            pause={false}
+            interval={3000}
+          >
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob1})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob2})` }}
+              ></div>
+            </Carousel.Item>
+          </Carousel>
+        </>
+      )}
     </>
   );
 }
