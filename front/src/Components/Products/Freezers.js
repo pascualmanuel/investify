@@ -2,10 +2,17 @@ import React from "react";
 import "./Product.css";
 import Carousel from "react-bootstrap/Carousel";
 import HeroFreezer from "../../Assets/products/freezers/hero-freezer.webp";
-
+import ProductFreezer1 from "../../Assets/products/freezers/Productos/freezer-142lts-1.webp";
+import ProductFreezer2 from "../../Assets/products/freezers/Productos/freezer-199lts-1.webp";
+import ProductFreezer3 from "../../Assets/products/freezers/Productos/freezer-99lts-1.webp";
+import EmocionalMob1 from "../../Assets/products/freezers/carousel-mob-freezer-1.jpg";
+import EmocionalMob2 from "../../Assets/products/freezers/carousel-mob-freezer-2.jpg";
+import EmocionalDesk from "../../Assets/products/freezers/carousel-desk-freezer-1.jpg";
+import EmocionalDesk2 from "../../Assets/products/freezers/carousel-desk-freezer-2.jpg";
 
 function Freezers() {
-
+  let viewportWidth = window.innerWidth;
+  console.log(viewportWidth);
   return (
     <>
       <div className="product-hero-cont">
