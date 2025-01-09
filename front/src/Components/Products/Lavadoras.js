@@ -64,6 +64,28 @@ function Lavadoras() {
         </h3>
         <div className="product-box-cont-categories">
           <div className="product-box-category bla"></div>
+
+          <div className="product-box-category bla">
+            <img
+              src={ProductLavadora5}
+              className="product-category-img"
+              width={180}
+              alt="category-img"
+            />
+            <p className="product-name">Secadora 7 KG</p>
+            <p className="product-subtitle">
+              6 programas de lavado y la mayor <br></br> eficiencia energética..
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
         </div>
       </div>
       {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
