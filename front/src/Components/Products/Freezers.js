@@ -47,14 +47,44 @@ function Freezers() {
         <h3 className="product-title-categories">
           Encuentra tu freezer perfecto
         </h3>
-        <div className="product-box-cont-categories"></div>
+        <div className="product-box-cont-categories">
+         
+        
+
+         
+        </div>
       </div>
       {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
-      <>
-        <div className="product-cont-categories">
-          <h3 className="i-text-prod">Más que un freezer, una experiencia.</h3>
-        </div>
-      </>
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod">
+              Más que un freezer, una experiencia.
+            </h3>
+            <div className="product-hero">
+              <Carousel
+                slide
+                controls={true}
+                indicators={true}
+                pause={false}
+                interval={3000}
+              >
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${EmocionalDesk})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${EmocionalDesk2})` }}
+                  ></div>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </div>
+        </>
+     
     </>
   );
 }
