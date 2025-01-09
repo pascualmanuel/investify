@@ -63,7 +63,38 @@ function Lavadoras() {
           Encuentra tu lavadora o secadora perfecta
         </h3>
         <div className="product-box-cont-categories">
-          <div className="product-box-category bla"></div>
+          <div className="product-box-category bla">
+            <div className="parent-hover">
+              <img
+                src={ProductLavadora2}
+                className="product-category-img"
+                width={180}
+                alt="category-img"
+                // id="img1"
+              />
+              {/* <img
+                src={ProductLavadora2}
+                className="product-category-img"
+                width={180}
+                alt="category-img"
+                id="img2"
+                // style={{ display: "none" }}
+              /> */}
+            </div>
+            <p className="product-name">Lavadora de Carga Superior 14 Kg</p>
+            <p className="product-subtitle">
+              6 programas de lavado y la mayor <br></br> eficiencia energética..
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
 
           <div className="product-box-category bla">
             <img
