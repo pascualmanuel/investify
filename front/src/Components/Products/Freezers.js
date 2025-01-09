@@ -42,6 +42,19 @@ function Freezers() {
           </Carousel.Item>
         </Carousel>
       </div>
+
+      <div className="product-cont-categories">
+        <h3 className="product-title-categories">
+          Encuentra tu freezer perfecto
+        </h3>
+        <div className="product-box-cont-categories"></div>
+      </div>
+      {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
+      <>
+        <div className="product-cont-categories">
+          <h3 className="i-text-prod">Más que un freezer, una experiencia.</h3>
+        </div>
+      </>
     </>
   );
 }
