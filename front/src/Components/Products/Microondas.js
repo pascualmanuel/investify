@@ -13,7 +13,32 @@ import SecondCarousel from "../../Assets/products/microondas/carousel-microondas
 import ThirdCarousel from "../../Assets/products/microondas/carousel-microondas-2.jpg";
 
 function Microondas() {
+  const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+  // console.log(loaded);
+
+  let viewportWidth = window.innerWidth;
+  // console.log(viewportWidth);
+
+  let HeroMicroondas;
+
+  if (viewportWidth < 600) {
+    HeroMicroondas = HeroMicroondasMobile;
+  } else {
+    HeroMicroondas = HeroMicroondasDesktop;
+  }
+  console.log(HeroMicroondas);
+
+  if (loaded === false) {
+    return (
+      <>
+        <div>Cargando!!</div>
+      </>
+    );
+  }
   return (
     <>
       <div className="product-hero-cont">
@@ -95,7 +120,7 @@ function Microondas() {
         </div>
       </div>
 
-
+      {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
 
     </>
   );
