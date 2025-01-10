@@ -121,40 +121,77 @@ function Microondas() {
       </div>
 
       {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
-
-      <>
-        <div className="product-cont-categories">
-          <h3 className="i-text-prod-mob">
-            Más que una heladera, <br></br> una experiencia.
-          </h3>
-        </div>
-        <Carousel
-          fade
-          controls={false}
-          indicators={true}
-          pause={false}
-          interval={3000}
-        >
-          <Carousel.Item>
-            <div
-              className="hero-products-mob"
-              style={{ backgroundImage: `url(${EmocionalMob1})` }}
-            ></div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div
-              className="hero-products-mob"
-              style={{ backgroundImage: `url(${EmocionalMob2})` }}
-            ></div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div
-              className="hero-products-mob"
-              style={{ backgroundImage: `url(${EmocionalMob3})` }}
-            ></div>
-          </Carousel.Item>
-        </Carousel>
-      </>
+      {viewportWidth > 600 ? (
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod">
+              Más que un microondas, una experiencia.
+            </h3>
+            <div className="product-hero">
+              <Carousel
+                slide
+                controls={true}
+                indicators={true}
+                pause={false}
+                interval={3000}
+              >
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${FirstCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${SecondCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${ThirdCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod-mob">
+              Más que una heladera, <br></br> una experiencia.
+            </h3>
+          </div>
+          <Carousel
+            fade
+            controls={false}
+            indicators={true}
+            pause={false}
+            interval={3000}
+          >
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob1})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob2})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${EmocionalMob3})` }}
+              ></div>
+            </Carousel.Item>
+          </Carousel>
+        </>
+      )}
     </>
   );
 }
