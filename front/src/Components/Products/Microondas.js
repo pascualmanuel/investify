@@ -87,7 +87,7 @@ function Microondas() {
               <br></br> Hecho para tí.
             </p>
             <a
-              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              href={``}
               target="_blank"
               className="cta-product"
               style={{ marginLeft: "0px" }}
@@ -109,7 +109,7 @@ function Microondas() {
               <br></br> Hecho para tí.
             </p>
             <a
-              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              href={``}
               target="_blank"
               className="cta-product"
               style={{ marginLeft: "0px" }}
@@ -120,7 +120,6 @@ function Microondas() {
         </div>
       </div>
 
-      {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
       {viewportWidth > 600 ? (
         <>
           <div className="product-cont-categories">
