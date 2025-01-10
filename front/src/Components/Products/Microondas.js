@@ -45,8 +45,50 @@ function Microondas() {
       <div className="product-cont-categories">
         
         <div className="product-box-cont-categories">
-          
-          
+          <div className="product-box-category bla">
+            <img
+              src={ProductMicro1}
+              className="product-category-img"
+              width={299}
+              alt="category-img"
+            />
+            <p className="product-name">Microondas Digital 20 Litros</p>
+            <p className="product-subtitle">
+              10 niveles de potencia y diferentes <br></br> programas de cocción
+              automática.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductMicro2}
+              className="product-category-img"
+              width={299}
+              alt="category-img"
+            />
+            <p className="product-name">Microondas Digital 23 Litros</p>
+            <p className="product-subtitle">
+              10 niveles de potencia y diferentes <br></br> programas de cocción
+              automática.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
         </div>
       </div>
 
