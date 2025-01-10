@@ -16,7 +16,31 @@ function Microondas() {
   return (
     <>
       <div className="product-hero-cont">
-
+        <Carousel fade controls={false} indicators={false} interval={null}>
+          <Carousel.Item>
+            <div
+              className="hero1"
+              style={{
+                height: "600px",
+                backgroundImage: `url(${HeroMicroondas})`,
+              }}
+            ></div>
+            <Carousel.Caption>
+              <div className="product-hero-sub-cont">
+                <div className="product-hero-left">
+                  <div className="product-banner">
+                    <h3 className="product-banner-title">Microondas</h3>
+                    <p className="product-banner-subtitle">
+                      <span style={{ fontWeight: "200" }}>que superan</span>
+                      <br></br>
+                      tus expectativas
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
       </div>
       <div className="product-cont-categories">
         
