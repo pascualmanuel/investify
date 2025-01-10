@@ -13,6 +13,7 @@ import SecondCarousel from "../../Assets/products/microondas/carousel-microondas
 import ThirdCarousel from "../../Assets/products/microondas/carousel-microondas-2.jpg";
 
 function Microondas() {
+
   return (
     <>
       <div className="product-hero-cont">
@@ -43,7 +44,9 @@ function Microondas() {
         </Carousel>
       </div>
       <div className="product-cont-categories">
-        
+        <h3 className="product-title-categories">
+          ENCUENTRA TU MICROONDAS PERFECTO
+        </h3>
         <div className="product-box-cont-categories">
           <div className="product-box-category bla">
             <img
@@ -92,7 +95,8 @@ function Microondas() {
         </div>
       </div>
 
-      {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
+
+
     </>
   );
 }
