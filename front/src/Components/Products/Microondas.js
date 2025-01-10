@@ -18,10 +18,8 @@ function Microondas() {
   useEffect(() => {
     setLoaded(true);
   }, []);
-  // console.log(loaded);
 
   let viewportWidth = window.innerWidth;
-  // console.log(viewportWidth);
 
   let HeroMicroondas;
 
@@ -120,7 +118,7 @@ function Microondas() {
         </div>
       </div>
 
-      {viewportWidth > 600 ? (
+      {viewportWidth > 700 ? (
         <>
           <div className="product-cont-categories">
             <h3 className="i-text-prod">
@@ -128,11 +126,11 @@ function Microondas() {
             </h3>
             <div className="product-hero">
               <Carousel
-                slide
+                fade
                 controls={true}
                 indicators={true}
                 pause={false}
-                interval={3000}
+                interval={3800}
               >
                 <Carousel.Item>
                   <div
@@ -168,7 +166,7 @@ function Microondas() {
             controls={false}
             indicators={true}
             pause={false}
-            interval={3000}
+            interval={3800}
           >
             <Carousel.Item>
               <div
