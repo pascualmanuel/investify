@@ -1,4 +1,8 @@
 import React from "react";
+import Hero from "./Hero";
+import Paris from "../../Assets/paris-cencosud.png";
+import { Link } from "react-router-dom";
+import "./Hero.css";
 
 function Banners() {
   return (
