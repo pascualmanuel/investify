@@ -16,11 +16,20 @@ function Banners() {
   let HeroMicroondas;
 
   if (viewportWidth < 600) {
+    Paris;
     HeroMicroondas = Paris;
   } else {
     HeroMicroondas = Paris;
   }
   console.log(HeroMicroondas);
+
+  if (loaded === false) {
+    return (
+      <>
+        <div>Cargando!!</div>
+      </>
+    );
+  }
 
   return (
     <>
