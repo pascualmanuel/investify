@@ -53,9 +53,9 @@ function Banners() {
             </a>
             <Link
               to="/freezers"
-              // onClick={() => {
-              //   window.scroll(0, 0);
-              // }}
+              onClick={() => {
+                window.scroll(0, 0);
+              }}
               className="cta-banner"
             >
               Más info
