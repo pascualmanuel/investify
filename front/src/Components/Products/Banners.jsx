@@ -5,6 +5,23 @@ import { Link } from "react-router-dom";
 import "./Hero.css";
 
 function Banners() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  let viewportWidth = window.innerWidth;
+
+  let HeroMicroondas;
+
+  if (viewportWidth < 600) {
+    HeroMicroondas = Paris;
+  } else {
+    HeroMicroondas = Paris;
+  }
+  console.log(HeroMicroondas);
+
   return (
     <>
       <section className="micro-banner-cont">
