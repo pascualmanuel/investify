@@ -150,6 +150,7 @@ function Banners() {
           <img src={Paris} height={100} />
         </div>
       </div>
+      {viewportWidth > 600 ? <></> : <></>}
     </>
   );
 }
