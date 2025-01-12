@@ -104,10 +104,25 @@ function Banners() {
             </div>
           </div>
         </div>
-      
+        <div className="daewoo-banner-right"></div>
+        <p className="daewoo-banner-p-mob">
+          <span className="light"> Líder mundial</span> <br></br>en tecnologías
+          digitales.
+        </p>
+        <h3 className="daewoo-banner-title-mob">
+          SOMOS UNA <br></br>MARCA COREANA
+        </h3>
       </section>
       <div className="pre-footer-back">
-      
+        <div className="pre-footer">
+          <h3 className="pre-footer-text">
+            Encuéntranos<br></br>en tienda Paris
+          </h3>
+          <a href="" className="cta-pre-footer" style={{ marginLeft: "0px" }}>
+            Ver productos en tienda
+          </a>
+          <img src={Paris} height={100} />
+        </div>
       </div>
     </>
   );
