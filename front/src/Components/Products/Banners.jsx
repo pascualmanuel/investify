@@ -151,7 +151,41 @@ function Banners() {
         </div>
       </div>
       {viewportWidth > 600 ? (
-        <></>
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod">
+              Lavadoras y secadoras de alta tecnología.
+            </h3>
+            <div className="product-hero">
+              <Carousel
+                slide
+                controls={true}
+                indicators={true}
+                pause={false}
+                interval={3000}
+              >
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${FirstCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${SecondCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${ThirdCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </div>
+        </>
       ) : (
         <>
           <div className="product-cont-categories">
