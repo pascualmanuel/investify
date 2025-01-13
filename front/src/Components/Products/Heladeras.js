@@ -17,7 +17,18 @@ import HeroMicroondasMob3 from "../../Assets/products/heladeras/carousel-mob-hel
 import { useState, useEffect, useRef } from "react";
 
 function Heladeras() {
+  const [loading, setLoading] = useState("");
 
+  let viewportWidth = window.innerWidth;
+
+  let HeroHeladera;
+
+  if (viewportWidth < 600) {
+    HeroHeladera = HeroHeladerasMobile;
+  } else {
+    HeroHeladera = HeroHeladerasDesktop;
+  }
+  console.log(HeroHeladera);
   return (
     <>
       <div className="product-hero-cont">
