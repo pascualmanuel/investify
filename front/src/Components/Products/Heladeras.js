@@ -172,7 +172,8 @@ function Heladeras() {
         </div>
       </div>
 
-    
+
+      {viewportWidth > 600 ? <></> : <></>}
     </>
   );
 }
