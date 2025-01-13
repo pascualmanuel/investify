@@ -58,7 +58,121 @@ function Heladeras() {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="product-cont-categories"></div>
+      <div className="product-cont-categories">
+        <h3 className="product-title-categories">
+          ENCUENTRA TU HELADERA PERFECTA
+        </h3>
+
+        <div className="product-box-cont-categories">
+          <div className="product-box-category bla">
+            <img
+              src={ProductHeladera}
+              className="product-category-img"
+              width={160}
+              alt="category-img"
+            />
+            <p className="product-name">Side By Side 562 Litros Inverter</p>
+            <p className="product-subtitle">
+              Refrigera tus alimentos de manera <br></br> inteligente y
+              consciente. <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHeladera2}
+              className="product-category-img"
+              width={160}
+              alt="category-img"
+            />
+            <p className="product-name"> Top Mount 251 Litros</p>
+            <p className="product-subtitle">
+              Refrigera tus alimentos de manera <br></br> inteligente y
+              consciente. <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHeladera5}
+              className="product-category-img"
+              width={160}
+              alt="category-img"
+            />
+            <p className="product-name">French Door 408 Litros Inverter</p>
+            <p className="product-subtitle">
+              Refrigera tus alimentos de manera <br></br> inteligente y
+              consciente. <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHeladera4}
+              className="product-category-img"
+              width={160}
+              alt="category-img"
+            />
+            <p className="product-name"> Top Mount 348 Litros</p>
+            <p className="product-subtitle">
+              Refrigera tus alimentos de manera <br></br> inteligente y
+              consciente. <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHeladera3}
+              className="product-category-img"
+              width={160}
+              alt="category-img"
+            />
+            <p className="product-name">Bottom Freezer 317 Litros Inverter</p>
+            <p className="product-subtitle">
+              Refrigera tus alimentos de manera <br></br> inteligente y
+              consciente. <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+        </div>
+      </div>
+
+    
     </>
   );
 }
