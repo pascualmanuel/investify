@@ -151,7 +151,46 @@ function HornosElectricos() {
         </div>
       </div>
 
-      {viewportWidth > 600 ? <></> : <></>}
+      {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
+      {viewportWidth > 600 ? (
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod">
+              Más que un horno eléctrico, una experiencia.
+            </h3>
+            <div className="product-hero">
+              <Carousel
+                slide
+                controls={true}
+                indicators={true}
+                pause={false}
+                interval={3000}
+              >
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${FirstCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${SecondCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div
+                    className="hero-products"
+                    style={{ backgroundImage: `url(${ThirdCarousel})` }}
+                  ></div>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
