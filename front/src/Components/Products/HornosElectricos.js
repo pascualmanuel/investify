@@ -28,7 +28,38 @@ function HornosElectricos() {
   console.log(HeroImage);
   return (
     <>
-      <div className="product-hero-cont"></div>
+      <div className="product-hero-cont">
+        <Carousel fade controls={false} indicators={false} interval={null}>
+          <Carousel.Item>
+            <div
+              className="hero1"
+              style={{ height: "600px", backgroundImage: `url(${HeroImage})` }}
+            ></div>
+            <Carousel.Caption>
+              <div className="product-hero-sub-cont">
+                <div className="product-hero-left">
+                  <div className="product-banner">
+                    <h3
+                      className="product-banner-title"
+                      style={{
+                        paddingBottom: "0px",
+                      }}
+                    >
+                      hornos <br></br> electricos
+                    </h3>
+                    <p className="product-banner-subtitle">
+                      <span style={{ fontWeight: "200", marginTop: "-18px" }}>
+                        hecho para tí
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+     
 
       {viewportWidth > 600 ? <></> : <></>}
     </>
