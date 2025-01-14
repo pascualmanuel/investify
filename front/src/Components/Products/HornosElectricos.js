@@ -16,7 +16,6 @@ import HeroHornosMob3 from "../../Assets/products/hornos-electricos/carousel-mob
 
 function HornosElectricos() {
   let viewportWidth = window.innerWidth;
-  console.log(viewportWidth);
 
   let HeroImage;
 
@@ -25,7 +24,7 @@ function HornosElectricos() {
   } else {
     HeroImage = HeroHornosDesktop;
   }
-  console.log(HeroImage);
+
   return (
     <>
       <div className="product-hero-cont">
@@ -68,7 +67,7 @@ function HornosElectricos() {
             <img
               src={ProductHornos1}
               className="product-category-img"
-              width={299}
+              width={310}
               alt="category-img"
             />
             <p className="product-name">Horno Eléctrico 23 L</p>
@@ -89,7 +88,7 @@ function HornosElectricos() {
             <img
               src={ProductHornos2}
               className="product-category-img"
-              width={299}
+              width={310}
               alt="category-img"
             />
             <p className="product-name">Horno Eléctrico 36 L</p>
@@ -110,7 +109,7 @@ function HornosElectricos() {
             <img
               src={ProductHornos3}
               className="product-category-img"
-              width={299}
+              width={310}
               alt="category-img"
             />
             <p className="product-name">Horno Eléctrico 42 L</p>
@@ -131,7 +130,7 @@ function HornosElectricos() {
             <img
               src={ProductHornos4}
               className="product-category-img"
-              width={299}
+              width={310}
               alt="category-img"
             />
             <p className="product-name">Horno Eléctrico 55 L</p>
@@ -151,7 +150,6 @@ function HornosElectricos() {
         </div>
       </div>
 
-      {/* { if (isTablet)(<h2>You have unread messages.</h2>)} */}
       {viewportWidth > 600 ? (
         <>
           <div className="product-cont-categories">
