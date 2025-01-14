@@ -189,7 +189,39 @@ function HornosElectricos() {
           </div>
         </>
       ) : (
-        <></>
+        <>
+          <div className="product-cont-categories">
+            <h3 className="i-text-prod-mob">
+              Más que un horno eléctrico, <br></br> una experiencia.
+            </h3>
+          </div>
+          <Carousel
+            fade
+            controls={false}
+            indicators={true}
+            pause={false}
+            interval={2000}
+          >
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${HeroHornosMob1})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${HeroHornosMob2})` }}
+              ></div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                className="hero-products-mob"
+                style={{ backgroundImage: `url(${HeroHornosMob3})` }}
+              ></div>
+            </Carousel.Item>
+          </Carousel>
+        </>
       )}
     </>
   );
