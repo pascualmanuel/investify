@@ -59,7 +59,11 @@ function HornosElectricos() {
           </Carousel.Item>
         </Carousel>
       </div>
-     
+      <div className="product-cont-categories">
+        <h3 className="product-title-categories">
+          Encuentra tu hornito perfecto
+        </h3>
+      </div>
 
       {viewportWidth > 600 ? <></> : <></>}
     </>
