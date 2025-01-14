@@ -15,6 +15,17 @@ import HeroHornosMob2 from "../../Assets/products/hornos-electricos/carousel-mob
 import HeroHornosMob3 from "../../Assets/products/hornos-electricos/carousel-mob-hornos-3.jpg";
 
 function HornosElectricos() {
+  let viewportWidth = window.innerWidth;
+  console.log(viewportWidth);
+
+  let HeroImage;
+
+  if (viewportWidth < 600) {
+    HeroImage = HeroHornosMobile;
+  } else {
+    HeroImage = HeroHornosDesktop;
+  }
+  console.log(HeroImage);
   return (
     <>
       <div className="product-hero-cont"></div>
