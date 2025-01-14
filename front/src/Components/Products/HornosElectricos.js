@@ -63,6 +63,92 @@ function HornosElectricos() {
         <h3 className="product-title-categories">
           Encuentra tu hornito perfecto
         </h3>
+        <div className="product-box-cont-categories">
+          <div className="product-box-category bla">
+            <img
+              src={ProductHornos1}
+              className="product-category-img"
+              width={299}
+              alt="category-img"
+            />
+            <p className="product-name">Horno Eléctrico 23 L</p>
+            <p className="product-subtitle">
+              Doble grill y cocción por convección.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHornos2}
+              className="product-category-img"
+              width={299}
+              alt="category-img"
+            />
+            <p className="product-name">Horno Eléctrico 36 L</p>
+            <p className="product-subtitle">
+              Doble grill y cocción por convección.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHornos3}
+              className="product-category-img"
+              width={299}
+              alt="category-img"
+            />
+            <p className="product-name">Horno Eléctrico 42 L</p>
+            <p className="product-subtitle">
+              Doble grill y cocción por convección.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+          <div className="product-box-category bla">
+            <img
+              src={ProductHornos4}
+              className="product-category-img"
+              width={299}
+              alt="category-img"
+            />
+            <p className="product-name">Horno Eléctrico 55 L</p>
+            <p className="product-subtitle">
+              Doble grill y cocción por convección.
+              <br></br> Hecho para tí.
+            </p>
+            <a
+              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
+              target="_blank"
+              className="cta-product"
+              style={{ marginLeft: "0px" }}
+            >
+              Ver en tienda
+            </a>
+          </div>
+        </div>
       </div>
 
       {viewportWidth > 600 ? <></> : <></>}
