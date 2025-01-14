@@ -81,7 +81,7 @@ function HornosElectricos() {
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
-              Ver en tienda
+              Buscarlo en la tienda oficial
             </a>
           </div>
           <div className="product-box-category bla">
@@ -102,7 +102,7 @@ function HornosElectricos() {
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
-              Ver en tienda
+              Buscarlo en la tienda oficial
             </a>
           </div>
           <div className="product-box-category bla">
@@ -123,7 +123,7 @@ function HornosElectricos() {
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
-              Ver en tienda
+              Buscarlo en la tienda oficial
             </a>
           </div>
           <div className="product-box-category bla">
@@ -144,7 +144,7 @@ function HornosElectricos() {
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
-              Ver en tienda
+              Buscarlo en la tienda oficial
             </a>
           </div>
         </div>
