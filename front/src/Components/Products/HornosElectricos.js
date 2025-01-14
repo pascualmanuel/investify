@@ -77,8 +77,8 @@ function HornosElectricos() {
               <br></br> Hecho para tí.
             </p>
             <a
-              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
-              target="_blank"
+              href={``}
+              target=""
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
@@ -98,8 +98,8 @@ function HornosElectricos() {
               <br></br> Hecho para tí.
             </p>
             <a
-              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
-              target="_blank"
+              href={``}
+              target=""
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
@@ -119,8 +119,8 @@ function HornosElectricos() {
               <br></br> Hecho para tí.
             </p>
             <a
-              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
-              target="_blank"
+              href={``}
+              target=""
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
@@ -140,8 +140,8 @@ function HornosElectricos() {
               <br></br> Hecho para tí.
             </p>
             <a
-              href={`https://www.paris.cl/search?q=Daewoo&prefn1=isMarketplace&prefv1=Paris`}
-              target="_blank"
+              href={``}
+              target=""
               className="cta-product"
               style={{ marginLeft: "0px" }}
             >
