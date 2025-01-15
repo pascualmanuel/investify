@@ -75,6 +75,13 @@ const Search = () => {
             onChange={handleSearch}
             type="text"
           />
+          {searchTerm.length < 1 && (
+            <button variant="outline-success" className="btn-search">
+              <div>
+                <Lupita width={20} style={{ fill: "white" }} />
+              </div>
+            </button>
+          )}
         </div>
 
         {searchTerm.length > 0 && <></>}
