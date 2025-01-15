@@ -10,8 +10,8 @@ const Search = () => {
   const [newData, setNewData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const url = "http://192.168.0.14:1337/api/products/?populate=deep";
-  const url2 = "https://dummyjson.com/products";
+  // const url = "http://192.168.0.14:1337/api/products/?populate=deep";
+  // const url = "https://dummyjson.com/products";
 
   useEffect(() => {
     const dataArray = [
@@ -37,6 +37,33 @@ const Search = () => {
   };
 
   const searchDiv = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (searchDiv.current && !searchDiv.current.contains(event.target)) {
+        handleClick();
+      }
+    }
+    function handleEscape(event) {
+      if (event.key === "Escape") {
+        handleClick();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [searchDiv]);
+
+  if (searchTerm.length > 0) {
+    console.log(searchTerm);
+  }
+
+  console.log(filteredData);
 
   return (
     <>
