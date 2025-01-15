@@ -10,7 +10,16 @@ const Search = () => {
   const [newData, setNewData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-
+  useEffect(() => {
+    const dataArray = [
+      { name: "Heladeras", id: "heladeras", description: "soy el mejor micro" },
+      { name: "Microondas", id: "microondas" },
+      { name: "Hornos eléctricos", id: "hornos" },
+      { name: "Lavadoras / Secadoras", id: "lavadoras" },
+      { name: "Freezer", id: "freezers" },
+    ];
+    setNewData(dataArray);
+  }, []);
 
 
   return (
