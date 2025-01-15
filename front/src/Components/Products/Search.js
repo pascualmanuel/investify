@@ -10,6 +10,9 @@ const Search = () => {
   const [newData, setNewData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const url = "http://192.168.0.14:1337/api/products/?populate=deep";
+  const url2 = "https://dummyjson.com/products";
+
   useEffect(() => {
     const dataArray = [
       { name: "Heladeras", id: "heladeras", description: "soy el mejor micro" },
@@ -21,6 +24,19 @@ const Search = () => {
     setNewData(dataArray);
   }, []);
 
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredData = newData.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleClick = () => {
+    setSearchTerm("");
+  };
+
+  const searchDiv = useRef(null);
 
   return (
     <>
