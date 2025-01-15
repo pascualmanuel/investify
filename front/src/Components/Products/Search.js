@@ -84,7 +84,23 @@ const Search = () => {
           )}
         </div>
 
-        {searchTerm.length > 0 && <></>}
+        {searchTerm.length > 0 && (
+          <div className="probando">
+            {filteredData.map((item) => (
+              <>
+                <Link to={`/${item.id}`}>
+                  <div className="search-product" onClick={handleClick}>
+                    <p>
+                      <p key={item.id} className="p-search">
+                        {item.name}
+                      </p>
+                    </p>
+                  </div>
+                </Link>
+              </>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );
