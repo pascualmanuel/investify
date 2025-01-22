@@ -65,55 +65,6 @@ function Banners() {
         </div>
       </section>
 
-      <section className="daewoo-banner-cont">
-        <div className="daewoo-banner-left">
-          <h3 className="daewoo-banner-title">
-            SOMOS UNA <br></br>MARCA COREANA
-          </h3>
-          <p className="daewoo-banner-p">
-            <span className="light"> Líder mundial</span> <br></br>en
-            tecnologías digitales.
-          </p>
-          <div className="square">
-            <div className="sq one">
-              <div className="sq-aux">
-                <span id="blabla">+</span>
-                <h3 className="daewoo-stats-1">90</h3>
-              </div>
-              <p className="daewoo-stats-sub">Años de experiencia</p>
-            </div>
-            <div className="sq two">
-              <div className="sq-aux">
-                <span id="blabla">+</span>
-                <h3 className="daewoo-stats-2">3,5k</h3>
-              </div>
-              <p className="daewoo-stats-sub">marcas registradas</p>
-            </div>
-            <div className="sq three">
-              <div className="sq-aux">
-                <span id="blabla">+</span>
-                <h3 className="daewoo-stats-3">160</h3>
-              </div>
-              <p className="daewoo-stats-sub">Paises</p>
-            </div>
-            <div className="sq four">
-              <div className="sq-aux">
-                <span id="blabla">+</span>
-                <h3 className="daewoo-stats-4 ">1m</h3>
-              </div>
-              <p className="daewoo-stats-sub">hogares usan daewoo</p>
-            </div>
-          </div>
-        </div>
-        <div className="daewoo-banner-right"></div>
-        <p className="daewoo-banner-p-mob">
-          <span className="light"> Líder mundial</span> <br></br>en tecnologías
-          digitales.
-        </p>
-        <h3 className="daewoo-banner-title-mob">
-          SOMOS UNA <br></br>MARCA COREANA
-        </h3>
-      </section>
       <div className="pre-footer-back">
         <div className="pre-footer">
           <h3 className="pre-footer-text">
