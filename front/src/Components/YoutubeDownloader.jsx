@@ -10,7 +10,7 @@ const VideoDownloader = () => {
 
   const handleDownload = async () => {
     // Validar si la URL contiene 'youtube'
-    if (!url.includes("youtube.com/")) {
+    if (!url.includes("https")) {
       setError("Por favor ingresa una URL válida");
       return;
     }
