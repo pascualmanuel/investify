@@ -36,7 +36,7 @@ const InstaFeed = () => {
   return (
     <div className="insta-feed" style={{ width: "90vw" }}>
       <div className="posts">
-        {posts.map((post) => (
+        {/* {posts.map((post) => (
           <div key={post.id} className="post">
             <a href={post.permalink} target="_blank" rel="noopener noreferrer">
               {post.media_type === "IMAGE" ||
@@ -53,14 +53,39 @@ const InstaFeed = () => {
                 />
               ) : null}
             </a>
-            {/* <p>{post.caption}</p> */}
-            {/* <p>Likes: {post.like_count}</p> */}
-            {/* <p>Comments: {post.comments_count}</p> */}
-            {/* {post.media_type === "VIDEO" || post.media_type === "REELS" ? (
+            <p>{post.caption}</p>
+            <p>Likes: {post.like_count}</p>
+            <p>Comments: {post.comments_count}</p>
+            {post.media_type === "VIDEO" || post.media_type === "REELS" ? (
               <p>Views: {post.video_views}</p>
-            ) : null} */}
+            ) : null}
           </div>
-        ))}
+        ))} */}
+
+        {posts
+          .filter(
+            (post) => post.media_type === "VIDEO" || post.media_type === "REELS"
+          ) // Filtramos los posts
+          .map((post) => (
+            <div key={post.id} className="post">
+              <a
+                href={post.permalink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {post.media_type === "VIDEO" || post.media_type === "REELS" ? (
+                  <video
+                    src={post.media_url}
+                    alt={post.caption}
+                    width={200}
+                    loop={true}
+                    muted={true}
+                    autoPlay={true}
+                  />
+                ) : null}
+              </a>
+            </div>
+          ))}
       </div>
     </div>
   );
