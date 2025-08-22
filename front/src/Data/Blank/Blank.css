@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.max-width {
+  max-width: 1240px;
+}
+
+@media (max-width: 767px) {
+  .max-width {
+    max-width: 550px;
+  }
+}
+.center {
+  margin: 0 auto; /* Centers the element horizontally */
+  padding: 0 1.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Fellix", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #161c2d;
+  overflow-x: hidden !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-family: "Fellix", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+@font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Black.woff2") format("woff2");
+    font-weight: 900; /* Black */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-BlackItalic.woff2") format("woff2");
+    font-weight: 900; /* Black */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Bold.woff2") format("woff2");
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-BoldItalic.woff2") format("woff2");
+    font-weight: 700; /* Bold */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-ExtraBold.woff2") format("woff2");
+    font-weight: 800; /* Extra Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-ExtraBoldItalic.woff2") format("woff2");
+    font-weight: 800; /* Extra Bold */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Light.woff2") format("woff2");
+    font-weight: 300; /* Light */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-LightItalic.woff2") format("woff2");
+    font-weight: 300; /* Light */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Medium.woff2") format("woff2");
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-MediumItalic.woff2") format("woff2");
+    font-weight: 500; /* Medium */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Regular.woff2") format("woff2");
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-RegularItalic.woff2") format("woff2");
+    font-weight: 400; /* Regular */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-SemiBold.woff2") format("woff2");
+    font-weight: 600; /* Semi Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-SemiBoldItalic.woff2") format("woff2");
+    font-weight: 600; /* Semi Bold */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-Thin.woff2") format("woff2");
+    font-weight: 100; /* Thin */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Fellix";
+    src: url("./assets/fonts/FellixTRIAL-ThinItalic.woff2") format("woff2");
+    font-weight: 100; /* Thin */
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix Italics";
+    src: url("./assets/fonts/FellixTRIALVF-Italics.woff2") format("woff2");
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Fellix Uprights";
+    src: url("./assets/fonts/FellixTRIALVF-Uprights.woff2") format("woff2");
+    font-style: normal;
+  }
+
+
+    
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .links {
+    position: relative;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+  }
+  
+  .links:hover {
+    color: #161c2d;
+    transition: 0.5s ease; /* TransiciÃ³n suave */
+  }
+  
+  .links::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Ajusta el grosor de la lÃ­nea */
+    background-color: #161c2d; /* Color de la lÃ­nea al hacer hover */
+    transform: scaleX(0); /* Inicia con la lÃ­nea invisible */
+    transform-origin: left; /* Cambia el origen de la transformaciÃ³n a la izquierda */
+    transition: transform 0.5s ease; /* TransiciÃ³n suave */
+    margin-bottom: -6px;
+  }
+  
+  .links:hover::after {
+    transform: scaleX(1); /* Muestra la lÃ­nea al hacer hover */
+  
+    margin-bottom: -6px;
+  }
+  
+  .active-link-class {
+    color: #161c2d;
+  }
+  .myH1 {
+    /* H1 Desktop */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -2px;
+  }
+  
+  .myH2 {
+    /* H2 Desktop */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 52px;
+    letter-spacing: -1.2px;
+  }
+  
+  .subH {
+    /* SubHeading - Desktop */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+  
+  .labels {
+    /* Labels */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1px;
+  }
+  .myP {
+    /* Body 1 - Regular */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+  
+  .myP2 {
+    /* Body 2 - Regular */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .myP3 {
+    /* Body 3 - Regular */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 121.4%;
+  }
+  
+  .myPBold {
+    /* Body 1 - Semibold */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.2px;
+  }
+  
+  .myPBold2 {
+    /* Body 2 - Semibold */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 121.4%;
+  }
+  
+
+
+  .myCTA {
+    /* CTA'S */
+    font-family: "Fellix", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.1px;
+  }
+  
+  .lines-hero {
+    margin-top: -200px;
+  }
+  
+  /* .bg-gradient {
+    background: linear-gradient(123.19deg, #161c2d 9.14%, #021e5f 139.89%);
+  } */
+  .bg-gradient {
+    background: linear-gradient(307deg, #161c2d, #021e5f, #161c2d, #021e5f);
+    background-size: 800% 800%;
+  
+    -webkit-animation: gradientInveniet 59s ease infinite;
+    -moz-animation: gradientInveniet 59s ease infinite;
+    animation: gradientInveniet 59s ease infinite;
+  }
+  
+  @-webkit-keyframes gradientInveniet {
+    0% {
+      background-position: 0% 11%;
+    }
+    50% {
+      background-position: 100% 90%;
+    }
+    100% {
+      background-position: 0% 11%;
+    }
+  }
+  @-moz-keyframes gradientInveniet {
+    0% {
+      background-position: 0% 11%;
+    }
+    50% {
+      background-position: 100% 90%;
+    }
+    100% {
+      background-position: 0% 11%;
+    }
+  }
+  @keyframes gradientInveniet {
+    0% {
+      background-position: 0% 11%;
+    }
+    50% {
+      background-position: 100% 90%;
+    }
+    100% {
+      background-position: 0% 11%;
+    }
+  }
+
+
+
+  @media (max-width: 767px) {
+    .no-hover {
+      transform: none !important;
+    }
+    .myH1 {
+      /* H1 Mobile */
+      font-size: 40px;
+      line-height: 45px;
+      letter-spacing: -1px;
+    }
+  
+    .myH2 {
+      /* H2 Mobile */
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 38px;
+      letter-spacing: -1.2px;
+    }
+    .subH {
+      /* SubHeading - Mobile */
+      font-size: 16px;
+      line-height: 23px;
+    }
+  
+    .lines-hero {
+      margin-top: -50px;
+    }
+  }
+  
+  .ecg-line {
+    stroke-dasharray: 400; /* Esto define la longitud del trazo */
+    stroke-dashoffset: 400; /* Oculta toda la lÃ­nea al principio */
+    animation: draw 2s linear infinite; /* AnimaciÃ³n infinita */
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 10; /* Dibuja la lÃ­nea */
+    }
+  }
