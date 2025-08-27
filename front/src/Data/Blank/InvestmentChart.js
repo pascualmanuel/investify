@@ -18,7 +18,7 @@ const InvestmentChart = ({ data }) => {
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
-      <Legend />
+      {/* <Legend /> */}
     </LineChart>
   );
 };
