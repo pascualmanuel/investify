@@ -10,9 +10,6 @@ const Search = () => {
   const [newData, setNewData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // const url = "http://192.168.0.14:1337/api/products/?populate=deep";
-  // const url = "https://dummyjson.com/products";
-
   useEffect(() => {
     const dataArray = [
       { name: "Heladeras", id: "heladeras", description: "soy el mejor micro" },
