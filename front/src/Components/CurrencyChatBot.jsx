@@ -8,7 +8,7 @@ const CurrencyChatBot = () => {
     setUserInput(e.target.value);
   };
 
-  // Llamar a Wit.ai para procesar la intención
+
   const handleSendMessage = async () => {
     if (!userInput) return;
 
@@ -27,7 +27,7 @@ const CurrencyChatBot = () => {
       const data = await response.json();
       console.log(data); // Para ver el resultado de Wit.ai
 
-      // Verificamos la intención y llamamos a las funciones correspondientes
+
       if (data && data.intents && data.intents.length > 0) {
         const intent = data.intents[0].name;
         switch (intent) {
