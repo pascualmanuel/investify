@@ -4,6 +4,13 @@ const Render = () => {
   return (
     <>
       <div>Render</div>
+      <div>Render</div>
+      <div>Render</div>
+      <div>Render</div>
+      <div>Render</div>
+      <div>Render</div>
+      <div>Render</div>
+      <div>Render</div>
     </>
   );
 };
