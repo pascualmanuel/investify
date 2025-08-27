@@ -12,7 +12,7 @@ import EmocionalDesk2 from "../../Assets/products/freezers/carousel-desk-freezer
 
 function Freezers() {
   let viewportWidth = window.innerWidth;
-  console.log(viewportWidth);
+
   return (
     <>
       <div className="product-hero-cont">
